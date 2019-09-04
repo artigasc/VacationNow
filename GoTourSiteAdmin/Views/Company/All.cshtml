@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Todas las agencias";
+}
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 px-md-5 px-3">
+                    <a asp-controller="Company" asp-action="AddCompany" class="btn btn-sm btn-orange my-2">Nueva agencia</a>
+                    @Html.Partial("_TableCompany")
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--end page wrapper-->
+</div>
+@section scripts{ 
+    <script>
+         $(document).ready(function () {
+
+             $('#TableCompany').DataTable({
+                "language": {
+                    "url": "/lib/datatables/spanish.json"
+                },
+                "ajax": {
+                    "url": "@Url.Action("GetData", "Company")",
+                    "type": "GET",
+                    "async":"true",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": 'name' },
+                    {
+                        "render": function (data, type, full) {
+                            return full["typeNumberDocument"] + ' : ' + full['numberDocument'];
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full["phone"] + ' , ' + full['movil'];
+                        }
+                    },
+
+                    { "data": 'address' },
+                    { "data": 'email' },
+                    {
+                        "data": "state",
+                        "render": function (data, type, full) {
+                            if (data == 1) {
+                                return '<span class="badge badge-success">Activo</span>';
+                            }
+                            else {
+                                return '<span class="badge badge-danger">Inactivo</span>';
+                            }
+                        }
+                    },                 
+                    {
+                        "targets": 6,
+                        "data": 'id',
+                        "render": function (data, type, full) {
+                            var state = '<button  onclick="ChangeState(this.id,' + full["state"] + ')" id=' + full["id"] + ' type="button" class="btn btn-sm btn-success mb-2"><i class="fas fa-plus-circle"></i></button>';
+                            if (full["state"] == 1) {
+                                return '<button class="btn btn-primary btn-sm" onclick="Edit(this.id)" id=' + data + '><i class="fas fa-edit"></i></button>' + state;
+                            }
+                            else {
+                                return state;
+                            }
+                        }
+
+                    },
+                     {
+                        "targets": 7,
+                        "data": 'id',
+                         "render": function (data, type, full) {
+                             if (full["state"] == 1) {
+                                 return '<button class="btn btn-primary btn-sm" onclick="Details(this.id)" id=' + data + '><i class="fas fa-info-circle"></i></button>';
+                             }
+                             return null;
+                        }
+
+                    }
+                ],
+
+            });
+        });
+        function Edit(Id) {
+            $.ajax({
+                type: "POST",
+                url: "/UserPortal/GetDataById",
+                Datatype: 'json',
+                async: true,
+                data: { valId: Id },
+                success: function (response) {
+                    if (response.content == "True") {
+                        window.location.href = '@Url.Action("Update", "Company")';
+                    } else if (response.content == "False") {
+                        window.location.href = '@Url.Action("Error", "Home")';
+                    }
+                    
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+
+            });
+        }
+        function ChangeState(Id, State) {
+            $.ajax({
+                url: "/Company/ChangeState",
+                type: "POST",
+                data: { valId: Id, valState: State },
+                DataType: "json",
+                async: true,
+                success: function (response) {
+                    if (response.content == "1" && response.state == "1") {
+                        Swal.fire(
+                            'Agencia Desactivada',
+                            '',
+                            'success'
+                        ).then(function () {
+                            $('#TableCompany').DataTable().ajax.reload();
+                        });
+                    }
+                    else if (response.content == "1" && response.state == "0") {
+                        Swal.fire(
+                            'Agencia Activada',
+                            '',
+                            'success'
+                        ).then(function () {
+                            $('#TableCompany').DataTable().ajax.reload();
+                        });
+                    }
+                    else if (response.content == "3" || response.content == "4") {
+                        Swal.fire(
+                            'No se puedo actualizar estado de la agencia',
+                            '',
+                            'error'
+                        )
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+
+            });
+        }
+        function Details(Id) {
+             $.ajax({
+                type: "POST",
+                 url: "/Company/GetDataById",
+                Datatype: 'json',
+                async: true,
+                data: { valId: Id},
+                success: function (response) {
+                    if (response.content == "True") {
+                        window.location.href = '@Url.Action("Detail", "Company")';
+                    } else if (response.content == "False") {
+                        window.location.href = '@Url.Action("Error", "Home")';
+                    }
+                    
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+
+            });
+        }
+    </script>
+}

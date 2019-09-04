@@ -1,0 +1,32 @@
+﻿@model GoTourSiteAdmin.Models.UserViewModel
+<h3 style="font-family:'BebasNeue'">Editar</h3>
+
+<form method="POST">
+    <input type="text" class="d-none" name="Id" id="Id" value="@Model.Id" placeholder="Id" />
+    <div class="form-group">
+        <input type="text" class="form-control" name="UserName" id="UserName" value="@Model.UserName" placeholder="Nombre" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="FirstName" id="FirstName" value="@Model.FirstName" placeholder="Nombre" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="FirstLastName" id="FirstLastName" value="@Model.FirstLastName" placeholder="Nombre" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="Email" class="form-control" id="Email" value="@Model.Email" placeholder="Email" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="Phone" class="form-control" id="Phone" value="@Model.Phone" placeholder="Teléfono" />
+    </div>
+    <div class="form-group">
+        <div class="cursor-pointer custom-file">
+            <input type="file" accept=".jpg,.jpeg,.png" class="cursor-pointer custom-file-input">
+            <label id="UrlPhoto" class="custom-file-label" for="inputfole" aria-describedby="inputGroupFileAddon02">@Model.UrlPhoto</label>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <button onclick="Edit()" type="button" class="btn btn-purple btn-sm px-5 mx-2 font-weight-bold rounded-default">Aceptar</button>
+        <button  type="button" class="btn btn-orange btn-sm px-5 mx-2 font-weight-bold rounded-default">Cancelar</button>
+    </div>
+</form>

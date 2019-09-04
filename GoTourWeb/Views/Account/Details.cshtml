@@ -1,0 +1,99 @@
+﻿@using GoTourWeb.Helpers
+@model GoTourWeb.Models.PaymentViewModel
+@{
+    ViewData["Title"] = "Detail";
+    string vName = "DetailReservation";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+<div class="confirm-page">
+    <div class="icon-back">
+        <a asp-area="" asp-controller="Account" asp-action="MyReservation"><i style="" class="fas fa-caret-left" title="@Language.GetTextView(vName, "c_button_2", vLanguage)"></i></a>
+    </div>
+    <div style="min-height: calc(100vh - 208.55px)" class="container pt-3 pb-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-12">
+                <div class="text-center"><a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logoregistro.svg" width="220" alt="GoTours" /></a></div>
+                <hr />
+                <div class="row justify-content-center pt-4">
+                    <div class="col-md-10">
+                        <!--Confirmation message-->
+                        <div class="content-confirm container px-4 py-5 p-md-5 bg-white text-center">
+                            <h2>"@Language.GetTextView(vName, "confirm_title", vLanguage) @Model.NameUser!"</h2>
+                            <span>@Language.GetTextView(vName, "message_confirm_part_1", vLanguage) @Model.Name, @Language.GetTextView(vName, "message_confirm_part_2", vLanguage)</span>
+                            <p class="py-2 px-5">
+                                @Model.Description
+                            </p>
+                            <!--info checkout-->
+                            <form class="px-md-5 text-left">
+                                <fieldset disabled>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_1", vLanguage):</label>
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName,"c_input_1",vLanguage)" value="@Model.Id.ToString().Substring(0,8)">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_10", vLanguage):</label>
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName,"c_input_10",vLanguage)" value="@Model.IdTransaction">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_2", vLanguage):</label>
+                                                <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"c_input_2",vLanguage)" value="@Model.FirstName @Model.LastName">
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_3", vLanguage):</label>
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName,"c_input_3",vLanguage)" value="@TypeDocumentViewModel.GetList(vLanguage).Where(i => i.Id==Model.TypeNumberDocument).FirstOrDefault().Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_5", vLanguage):</label>
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName,"c_input_5",vLanguage)" value="@Model.NumberDocument">
+
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_4", vLanguage):</label>
+                                                <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"c_input_4",vLanguage)" value="@Model.Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_6", vLanguage):</label>
+                                                <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"c_input_6",vLanguage)" value="@Model.Phone">
+
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_7", vLanguage):</label>
+                                                <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"c_input_7",vLanguage)" value="@Model.Persons">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_8", vLanguage):</label>
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName,"c_input_8",vLanguage)" value="@Model.Symbol @Model.Mount ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>@Language.GetTextView(vName, "c_input_9", vLanguage):</label>
+
+                                                <input class="form-control" type="text" name="name" placeholder="@Language.GetTextView(vName, "c_input_9", vLanguage)" value="@Model?.DateReserve.ToString("dd/MM/yyyy") ">
+                                            </div>
+
+
+                                        </div>
+                                        </div>
+                                </fieldset>
+
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_Footer")
+
+

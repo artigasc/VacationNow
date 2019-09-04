@@ -1,0 +1,196 @@
+﻿@using GoTourWeb.Helpers
+@model GoTourWeb.Models.TourViewModel
+@{
+
+    string vName = "Tour";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+<!-- post 1 -->
+@{
+    if (Model != null && Model.Activities != null && Model.Activities.Count() > 0) {
+        foreach (var vItem in Model.Activities) {
+            var vTarget = "A" + vItem.Id;
+            <div class="row my-3 bg-white align-items-center">
+                <div class="col-12 col-md-4 p-0">
+                    <img src="@vItem.UrlPhoto" class="img-fluid w-100" alt="">
+                </div>
+                <div class="content-post col-12 col-md-8 pt-3 pb-3 px-4 bg-white">
+
+                    <div class="post-title">
+
+                        <h6 class="d-md-inline-block"><b>@vItem.Name</b></h6>
+
+                        <div class="left-info d-inline-block float-sm-right text-md-right">
+                            <span class="text-md-right">
+                                @for (int i = 0; i < vItem.Ranking; i++) {
+                                    <i class="fas fa-star"></i>
+                                }
+                                @for (int i = vItem.Ranking; i < 8; i++) {
+                                    <i class="far fa-star"></i>
+                                }
+
+                            </span>
+                            <span class="price">@ViewData["CurrencySymbolDefault"] @vItem.Mount</span>
+                            <span>@Language.GetTextView(vName, "post_item_5", vLanguage)</span>
+                            <div class="mt-3 custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">@Language.GetTextView(vName, "post_checkbox", vLanguage)</label>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <ul class="m-0">
+                        <li><i class="mr-1 fas fa-bullhorn"></i>&nbsp;@Language.GetTextView(vName, "post_item_1", vLanguage) @vItem.NameCompany </li>
+                        <li><i class="mr-2 far fa-clock"></i>&nbsp;@Language.GetTextView(vName, "post_item_2", vLanguage) @vItem.Duration @Language.GetTextView(vName, "post_item_2_1", vLanguage)</li>
+                        <li><i class="mr-1 fa fa-users"></i>&nbsp;@Language.GetTextView(vName, "post_item_3", vLanguage) @vItem.MinimumPeople  @Language.GetTextView(vName, "post_item_3_1", vLanguage)</li>
+                        <li><i class="mr-2 far fa-calendar-check"></i>&nbsp;@Language.GetTextView(vName, "post_item_4", vLanguage) @vItem.SellTimeAdvance @Language.GetTextView(vName, "post_item_4_1", vLanguage)</li>
+                    </ul>
+                    <div class="buttons-post text-right pl-3">
+
+                        <!--modal info tour-->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-purple mx-1" data-toggle="modal" data-target="#@vTarget">
+                            <i class="fas fa-plus small"></i>&nbsp;@Language.GetTextView(vName, "post_button_left", vLanguage)
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade bd-example-modal-lg" id="@vTarget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="container modal-body text-justify">
+                                        <div class="row pb-4">
+                                            <div class="col-md-8">
+                                                <h3 class="m-0 p-0">@vItem.Name</h3>
+                                                <span class="text-md-right">
+                                                    @for (int i = 0; i < vItem.Ranking; i++) {
+                                                        <i class="fas fa-star"></i>
+                                                    }
+                                                    @for (int i = vItem.Ranking; i < 8; i++) {
+                                                        <i class="far fa-star"></i>
+                                                    }
+
+                                                </span>
+                                            </div>
+                                            @if (vItem.FreeCancelation == 1) {
+                                                <div class="col-md-4 text-center my-2 text-md-right">
+                                                    <span class="badge bg-orange">@Language.GetTextView(vName, "post_info_text", vLanguage)</span>
+                                                </div>
+                                            }
+                                        </div>
+                                        <article>
+                                            <h4><i class="mr-1 fas fa-plus small"></i>&nbsp;@Language.GetTextView(vName, "modal_item_1", vLanguage)</h4>
+                                            <p>
+
+                                                @vItem.StartPoint
+                                            </p>
+                                        </article>
+                                        <article>
+                                            <h4><i class="mr-1 fas fa-plus small"></i>&nbsp;@Language.GetTextView(vName, "modal_item_2", vLanguage)</h4>
+                                            <p>
+                                                @Html.Raw(vItem.Itinerary.Replace("/n", "<br/>"));
+
+                                            </p>
+                                        </article>
+                                        <article>
+                                            <h4><i class="mr-1 fas fa-plus small"></i>&nbsp;@Language.GetTextView(vName, "modal_item_3", vLanguage)</h4>
+                                            <p>
+
+                                                @vItem.Includes
+                                            </p>
+                                        </article>
+                                        <article>
+                                            <h4><i class="mr-1 fas fa-plus small"></i>&nbsp;@Language.GetTextView(vName, "modal_item_4", vLanguage)</h4>
+                                            <p>
+
+                                                @vItem.Note
+                                            </p>
+                                        </article>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--end modal info tour-->
+                        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm", style = "display: none;" })) {
+                            @Html.AntiForgeryToken()
+                        }
+                        <button onclick="PassToCheckOut('@vItem.Id')" class="btn btn-orange">&nbsp;@Language.GetTextView(vName, "post_button_right", vLanguage)</button>
+                    </div>
+
+                </div>
+            </div>
+        }
+    } else {
+        <div class="alert alert-light" role="alert">
+            <strong><i class="fas fa-exclamation-circle"></i>&nbsp; No se encontraron resultados</strong>
+
+        </div>
+    }
+}
+
+
+@{
+    if (Model != null && Model.Activities != null && Model.Activities.Count() > 0) {
+        int vPag = Convert.ToInt32(ViewData["RowsPerPage"]);
+        int vCurrent = Convert.ToInt32(ViewData["PageNumber"]);
+        <nav class="d-flex justify-content-end" aria-label="...">
+            <ul class="pagination">
+                @if (vCurrent > 1) {
+                    <li class="page-item">
+
+                        <label onclick="SearchTours('@(vCurrent - 1)')" class="page-link"><span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+
+                    </li>
+                }
+                @for (int vItem = vCurrent; vItem <= vCurrent + 6; vItem++) {
+
+                    if (vItem == vCurrent) {
+                        <li class="page-item active">
+                            <label onclick="SearchTours('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+
+                    } else if (vItem > vPag) {
+                        break;
+                    } else {
+                        <li class="page-item">
+                            <label onclick="SearchTours('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+                    }
+
+                }
+                @if (vCurrent < vPag) {
+                    <li class="page-item">
+                        <label onclick="SearchTours('@(vCurrent + 1)')" class="page-link cursor-hand"><span aria-hidden="true">&gt;&gt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&gt;&gt;</span></label>
+                    </li>
+
+                }
+
+            </ul>
+        </nav>
+
+    }
+}

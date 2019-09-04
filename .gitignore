@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/GoTour/v15/.suo
+/.vs
+/GoTourWeb/GoTourWeb.csproj.user
+/.vs/GoTour/v15/.suo
+/.vs
+/GoTourWeb/GoTourWeb.csproj.user
+/GoTourWeb/bin
+/GoTourWeb/obj
+/GoTourSiteAdmin/bin
+/GoTour/obj
+/GoTour/GoTourWeb.csproj.user
+/GoTourSiteAdmin/GoTourWeb.csproj.userSiteAdmin

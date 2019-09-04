@@ -1,0 +1,226 @@
+﻿@using GoTourWeb.Helpers
+@{
+    ViewData["Title"] = "_Search";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+<div class="input-group">
+    <input id="InputSearch" autocomplete="off" type="text" class="form-control rounded-0" placeholder="@Language.GetTextView("City", "input_header", vLanguage)" aria-describedby="button-addon2" onfocus="MoveToUporDown()" onkeyup="GetValueSearch()">
+    <div id="searchLoader" class="d-none">
+        <div calss="input-group-append">
+            <div id="loader-cont" class="loader-cont">
+                <div id="carga" class="carga"></div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group-append">
+        <button class="btn btn-orange" type="button" id="button-addon2"><img height="20" src="~/images/iconolupa.svg" alt="">  @Language.GetTextView("Index", "button_search", vLanguage)</button>
+    </div>
+</div>
+<div class="DivSearch list-group mr-auto" id="DivSearchPrincipal">
+</div>
+
+<script>
+
+    function ClickSelectionList(valIdCityTour, valIdCity, valOrdering, valUrl) {
+        if (valOrdering == 1) {
+            SelectCity(valIdCity)
+        } else if (valOrdering == 2) {
+            SelectTour(valIdCity, valIdCityTour);
+        }
+    }
+
+    function GetValueSearch() {
+        var vliDivSearchPrincipal = $('#DivSearchPrincipal');
+        var vInputText = $('#InputSearch').val().trim();
+        $('#searchLoader').removeClass("d-none");
+
+        if (vInputText.length < 3) {
+            $('#DivSearchPrincipal').removeClass("d-block");
+            $('#searchLoader').addClass("d-none");
+        } else if (vInputText.length >= 3) {
+
+            var vParams = {
+                ValueInput: vInputText
+            };
+            $.ajax({
+                url: '/Home/Search',
+                method: "POST",
+                data: vParams,
+                async: false,
+                success: function (response) {
+                    var vText = document.getElementById("InputSearch");
+                    vText.addEventListener("keydown", function () {
+                        $('#searchLoader').addClass("d-none");
+                    }, false)
+
+                    vliDivSearchPrincipal.html(response);
+                    vliDivSearchPrincipal.addClass("d-block");
+                    $('#DivSearchPrincipal a').click(function () {
+                        $("#InputSearch").val($(this).text().trim());
+                    });
+
+                },
+                complete: function () {
+                    var vText = document.getElementById("InputSearch"),
+                        intervalo;
+                    vText.addEventListener("keyup", function () {
+                        clearInterval(intervalo);
+                        intervalo = setInterval(function () {
+                            $("#searchLoader").addClass("d-none")
+                            clearInterval(intervalo);
+                        }, 500);
+                    }, false);
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+
+                }
+            });
+        }
+    }
+
+    function MoveToUporDown() {
+
+        var ul = document.getElementById('DivSearchPrincipal');
+        var liSelected;
+        var index = 0;
+        var valInput = document.getElementById("InputSearch");
+        document.addEventListener('keyup', function (event) {
+
+            var len = ul.getElementsByTagName('a').length - 1;
+            if (event.which === 40) {
+                index++;
+
+                if (liSelected) {
+                    removeClass(liSelected, 'ActiveItem');
+                    next = ul.getElementsByTagName('a')[index];
+                    if (typeof next !== undefined && index <= len) {
+
+                        liSelected = next;
+                    } else {
+                        index = 0;
+                        liSelected = ul.getElementsByTagName('a')[0];
+
+                    }
+                    addClass(liSelected, 'ActiveItem');
+                }
+                else {
+                    index = 0;
+
+                    liSelected = ul.getElementsByTagName('a')[0];
+                    addClass(liSelected, 'ActiveItem');
+                }
+
+            }
+            else if (event.which === 38) {
+                if (liSelected) {
+                    removeClass(liSelected, 'ActiveItem');
+                    index--;
+                    next = ul.getElementsByTagName('a')[index];
+
+                    if (typeof next !== undefined && index >= 0) {
+                        liSelected = next;
+
+                    } else {
+                        index = len;
+                        liSelected = ul.getElementsByTagName('a')[len];
+                    }
+                    addClass(liSelected, 'ActiveItem');
+                }
+                else {
+                    index = 0;
+                    liSelected = ul.getElementsByTagName('a')[len];
+                    addClass(liSelected, 'ActiveItem');
+                }
+
+
+            }
+
+            if (event.which === 13) {
+                window.location.href = liSelected.getAttribute("href");
+            }
+
+        }, false);
+
+        function removeClass(el, className) {
+            if (el.classList) {
+                el.classList.remove(className);
+            } else {
+                el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            }
+        };
+
+        function addClass(el, className) {
+            if (el.classList) {
+                el.classList.add(className);
+            } else {
+                el.className += ' ' + className;
+            }
+        };
+
+    }
+
+    function SelectTour(valIdCity, valIdTour) {
+        var vModel = {
+            Id: valIdCity
+        };
+        $.ajax({
+            url: "/Home/SelectCity",
+            method: "POST",
+            data: JSON.stringify(vModel),
+            dataType: "JSON",
+            contentType: 'application/json',
+            async: true,
+            success: function () {
+                     $.ajax({
+                        url: "/City/InfoSearch",
+                        success: function (resp) {
+                            if (resp.content == "1") {
+                               TourSearch(valIdTour);
+                               return;
+                            }
+                        }
+                    })
+
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+                $(".modaldisplay").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    }
+
+    function TourSearch(valIdTour) {
+        var vModel = {
+            IdTour: valIdTour
+        };
+        $.ajax({
+            url: "/City/SelectTours",
+            method: "POST",
+            data: vModel,
+            async: true,
+            success: function (response) {
+                if (response.content == 'true') {
+                    window.location.href = '@Url.Action("Info", "Tours")';
+                    return;
+                }
+                window.location.href = '@Url.Action("Error", "Home")';
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+
+</script>
+

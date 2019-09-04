@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "ExternalLogin";
+}
+
+<!--<div>
+    <button class="button" id="GoogleLogin" onclick="login()" style="background-color:#e82121"><i class="fa fa-google-plus"></i> Sign in with Google</button>
+    <div id="uname"></div>
+    <div id="uemail"></div><br />
+    <div><img id="imgHolder" style="height:120px;width:120px;" /></div>
+</div>-->
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<div id="info"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+
+
+<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+<div id="status">
+</div>

@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewData["Title"] = "AddUserPortal";
+    @model List<GoTourSiteAdmin.Models.CompanyViewModel>
+
+}
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 px-md-5 px-3">
+
+                    <div id="ContentView">
+                        <!--AddUser Form-->
+                        <h3>Agregar Usuario</h3>
+
+                        <form id="FormAddUser" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Usuario/Correo(*):</label>
+                                    <input type="text" class="form-control" name="UserName" id="UserName" placeholder="Nombre de Usuario" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Contraseña(*):</label>
+                                    <input type="text" class="form-control" name="Password" id="Password" placeholder="Contraseña" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Primer Nombre(*):</label>
+                                    <input type="text" class="form-control" name="FirstName" id="FirstName" placeholder="Nombre" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Segundo Nombre:</label>
+                                    <input type="text" class="form-control" name="SecondName" id="SecondName" placeholder="Nombre" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Primer Apellido(*):</label>
+                                    <input type="text" class="form-control" name="FirstLastName" id="FirstLastName" placeholder="Apellido Materno" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Segundo Apellido:</label>
+                                    <input type="text" class="form-control" name="SecondLastName" id="SecondLastName" placeholder="Apellido Materno" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold">Email opcional:</label>
+                                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Email" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold">Foto:</label>
+                                    @*<div class="cursor-pointer custom-file">
+            <input id="InputUrl" type="file" accept=".jpg,.jpeg,.png" class="cursor-pointer custom-file-input">
+            <label id="UrlPhoto" class="custom-file-label" for="InputUrl" aria-describedby="URLFoto"></label>
+        </div>*@
+                                    <input id="UrlPhoto" type="file" accept="image/*" class="cursor-pointer custom-file-input">
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold">Teléfono:</label>
+                                    <input type="text" class="form-control" name="Phone" id="Phone" value="" placeholder="Teléfono" />
+
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label class="font-weight-bold">Compañía:</label>
+                                    <select id="Company" class="form-control js-example-basic-single">
+                                        @{
+                                                foreach (var vItem in Model) {
+                                                    <option value="@vItem.Id">@vItem.Name </option>
+                                                }
+                                        }
+                                    </select>
+
+                                </div>
+                         
+
+                            </div>
+
+                            <div class="text-center">
+                                <button id="AddUser" type="button" class="btn btn-purple btn-sm px-5 mx-2 font-weight-bold rounded-default">Aceptar</button>
+                                <button type="submit" class="btn btn-orange btn-sm px-5 mx-2 font-weight-bold rounded-default">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+<!--end page wrapper-->
+
+@section scripts {
+    <script>
+     
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+
+        });
+         $("#AddUser").click(function () {
+             if (!$("#FormAddUser").valid()) {
+                    return null;
+             }
+             var vFormData = new FormData();
+         
+             var TargetFile = $('#UrlPhoto')[0].files[0];
+             vFormData.append("UserName", $("#UserName").val());
+             vFormData.append("Email", $("#UserName").val());
+             vFormData.append("Password", $("#Password").val());
+             vFormData.append("FirstName", $("#FirstName").val());
+             vFormData.append("FirstLastName", $("#FirstLastName").val());
+             vFormData.append("SecondLastName", $("#SecondLastName").val());
+             vFormData.append("SecondName", $("#SecondName").val());
+             vFormData.append("BackMail", $("#Email").val());
+             vFormData.append("Phone", $("#Phone").val());
+             vFormData.append("Company", $("#Company").val());
+             if ($("#UrlPhoto")[0].files.length > 0) {
+                     vFormData.append("Photo", TargetFile, TargetFile.name);
+             }
+             for (var pair of vFormData.entries()) {
+                 console.log(pair[0] + ', ' + pair[1]);
+             }  
+             $.ajax({
+                     url: "/UserPortal/AddUser",
+                     type: "POST",
+                     data: vFormData,
+                     dataType: "json",
+                     contentType: false,
+                     processData: false,
+                     success: function (response) {
+                            if (response.content == "1") {
+                                Swal.fire(
+                                    'Usuario Agregado',
+                                    '',
+                                    'success'
+                                ).then(function () {
+                                    window.location.href = '@Url.Action("All", "UserPortal")';
+                                });
+                            } else if (response.content == "2") {
+                                Swal.fire(
+                                    'Ya existe el usuario',
+                                    'Intente ingresando un nombre de usuario diferente',
+                                    'error'
+                                )
+                            } else if (response.content == "3" || response.content == "4" || response.content =="5") {
+                                Swal.fire(
+                                    'Ha ocurrido un error, no se puedo agregar correctamente',
+                                    'Inténtelo de nuevo',
+                                    'error'
+                            )
+                            }                       
+
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+                        }
+             });       
+         });
+    </script>
+}       

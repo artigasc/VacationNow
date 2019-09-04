@@ -1,0 +1,208 @@
+﻿@using GoTourWeb.Helpers
+@model List<GoTourWeb.Models.PaymentViewModel>
+@{
+    ViewData["Title"] = "My Reservations";
+    string vName = "MyReservation";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+    UserViewModel vUserSession = (UserViewModel)ViewData["UserDataSession"];
+}
+
+<div class="reservations-page bg-default">
+    <div class="icon-back">
+        <a asp-area="" asp-controller="Home" asp-action="Index"><i style="" class="fas fa-caret-left"></i></a>
+    </div>
+    <div style="min-height: calc(100vh - 208.55px)" class="container-fluid px-md-5 pt-5">
+        <div class="section-2 row align-items-center justify-content-center">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a asp-area="" asp-controller="Home" asp-action="Index"><img class="img-fluid" src="~/images/logoregistro.svg" width="220" alt="GoTours" /></a>
+                </div>
+                <hr />
+                <div class="row py-5 px-4">
+                    <!--info user-->
+                    <div class="col-lg-3">
+                        <div class="bg-orange info-user my-md-0 my-3 py-3 px-4 text-center text-md-left">
+                            <img class="img-fluid mx-auto py-4 d-block" src="@vUserSession.UrlPhoto" width="150" alt="UserImage" style="border-radius: 50%;" />
+                            <h5 class="text-center"><b>@vUserSession.FirstName @vUserSession.SecondName @vUserSession.FirstLastName @vUserSession.SecondLastName </b></h5>
+                            <ul>
+                                <li>@Language.GetTextView(vName, "info_user_4", vLanguage): @vUserSession.Email</li>
+                            </ul>
+                        </div>
+                        <div class="py-4">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="rounded py-2 text-center btn-purple d-block text-decoration-none">@Language.GetTextView(vName, "info_user_button", vLanguage)</a>
+                        </div>
+                    </div>
+                    <!--end info user-->
+                    <!--reservations-->
+                    <div class="content-tour col-lg-9">
+
+                        <div class="title-reser"><h2 class=" py-2">@Language.GetTextView(vName, "re_post_title", vLanguage)</h2></div>
+                        <!-- post -->
+                        <div id="DivListReservations">
+                            @{
+                                await Html.RenderPartialAsync("_ReservationList", Model);
+
+                            }
+                        </div>
+
+                    </div>
+
+
+                    <!--end reservations-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    function SaveRanking(valIdPayment, valIdActivity, valRanking) {
+        var vModel = {
+            Id: valIdPayment,
+            IdActivity: valIdActivity,
+            Ranking: valRanking
+        };
+        $.ajax({
+            url: "/Account/SaveRanking",
+            method: "POST",
+            data: vModel,
+            async: true,
+            success: function (response) {
+                location.reload(true);
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+                $(".modaldisplay").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+    function CancelAndRefund(vId, vNameTour, vGatewayData, vEmail) {
+        Swal({
+            title: '@Language.GetMessageIn(vName, "1", vLanguage, "Title")' + ' ' + vNameTour + '?',
+            text: "",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '@Language.GetMessageIn(vName, "1", vLanguage, "SecondTitle")',
+            cancelButtonText: '@Language.GetMessageIn(vName, "1", vLanguage, "SecondText")',
+
+
+        }).then(function (result) {
+            if (result.value) {
+                var vParams = {
+                    Id: vId,
+                    GatewayJsonData: vGatewayData,
+                    Email : vEmail
+                }
+                $.ajax({
+                    url: "/Account/CancelAndRefund",
+                    method: "POST",
+                    data: JSON.stringify(vParams),
+                    dataType: "JSON",
+                    contentType: 'application/json',
+                    async: true,
+                    success: function (response) {
+                        if (response.content = "1") {
+                            $(".modaldisplay").hide();
+                            Swal({
+                                title: '@Language.GetMessageIn(vName, "2", vLanguage, "Title")',
+                                text: '@Language.GetMessageIn(vName, "2", vLanguage, "Text")',
+                                type:'success'
+                                }).then(function () {
+                                    window.location = '@Url.Action("MyReservation", "Account")';
+                                })
+
+                        }
+                    },
+                    beforeSend: function () {
+                        $("body").fadeIn(function () {
+                            $(".modaldisplay").show();
+                        });
+                    },
+                    complete: function () {
+                        $(".modaldisplay").hide();
+                    },
+                    error: function (xhr) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+
+                    }
+                })
+
+
+            }
+        });
+    }
+
+    function SearchReservation(vPage) {
+        var data = { PageNumber: vPage };
+        $.ajax({
+            url: "/Account/SearchReservation",
+            method: "POST",
+            data: data,
+            async: true,
+            success: function (response) {
+
+                $('#DivListReservations').html(response)
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+
+                $(".modaldisplay").hide();
+
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+    function Details(vIdPayment) {
+        var data= {
+                valIdPAyment:vIdPayment
+            }
+            $.ajax({
+                type: "POST",
+                url: '/Account/DetailsReservation',
+                dataType: 'json',
+                async: true,
+                data: data,
+                success: function (response) {
+                    if (response.content == "1") {
+                        window.location.href = '@Url.Action("Details", "Account")';
+                        return;
+                    } else {
+                        window.location.href = '@Url.Action("Index", "Home")';
+                        return;
+                    }
+                   
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                    return;
+                }
+            });
+    }
+</script>
+
+@await Html.PartialAsync("_Footer")
+

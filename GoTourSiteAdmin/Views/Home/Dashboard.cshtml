@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+        <div class="row bg-purple-light">
+            <!--card1-->
+            <div class="col-md-3">
+                <div class="card py-3 bg-purple-light text-center border-0">
+                    <div class="card-body border-right-2 border-purple p-1">
+                        <h6 class="card-title font-weight-bold">Total de Usuarios</h6>
+                        <h2 class="font-weight-bold">3500</h2>
+                        <small>5% en el ultimo mes</small>
+                    </div>
+                </div>
+            </div>
+            <!--card1-->
+            <!--card1-->
+            <div class="col-md-3">
+                <div class="card py-3 bg-purple-light text-center border-0">
+                    <div class="card-body border-right-2 border-purple p-1">
+                        <h6 class="card-title font-weight-bold">Total de Empresas</h6>
+                        <h2 class="font-weight-bold">300</h2>
+                        <small>12% en el ultimo mes</small>
+                    </div>
+                </div>
+            </div>
+            <!--card1-->
+            <!--card1-->
+            <div class="col-md-3">
+                <div class="card py-3 bg-purple-light text-center border-0">
+                    <div class="card-body border-right-2 border-purple p-1">
+                        <h6 class="card-title font-weight-bold">Total de Tours</h6>
+                        <h2 class="font-weight-bold">1200</h2>
+                        <small>4% en el ultimo mes</small>
+                    </div>
+                </div>
+            </div>
+            <!--card1-->
+            <!--card1-->
+            <div class="col-md-3">
+                <div class="card py-3 bg-purple-light text-center border-0">
+                    <div class="card-body p-1">
+                        <h6 class="card-title font-weight-bold">Total de Reservas</h6>
+                        <h2 class="font-weight-bold">2700</h2>
+                        <small>2% en el ultimo mes</small>
+                    </div>
+                </div>
+            </div>
+            <!--card1-->
+        </div>
+
+        <!--page content-->
+        @{
+            await Html.RenderPartialAsync("_DashboardContent");
+        }
+        <!--end page content-->
+    </main>
+    <!--end page wrapper-->
+
+</div>

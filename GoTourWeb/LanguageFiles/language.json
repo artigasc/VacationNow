@@ -1,0 +1,2758 @@
+{
+  "ViewText": [
+    {
+      "nameview": "Index",
+      "elements": [
+        {
+          "navlink_1": [
+            {
+              "es": "Ciudades"
+            },
+            {
+              "en": "Cities"
+            },
+            {
+              "po": "Cidades"
+            }
+
+          ]
+        },
+        {
+          "navlink_2": [
+            {
+              "es": "Tours"
+            },
+            {
+              "en": "Tours"
+            },
+            {
+              "po": "Tours"
+            }
+          ]
+
+        },
+        {
+          "navlink_coin": [
+            {
+              "es": "PEN S/."
+            },
+            {
+              "en": "USD $"
+            },
+            {
+              "po": "BRL R$"
+            }
+          ]
+        },
+        {
+          "navlink_account_1": [
+            {
+              "es": "Registrarse"
+            },
+            {
+              "en": "Sign up"
+            },
+            {
+              "po": "Inscrever-se"
+            }
+          ]
+        },
+        {
+          "navlink_account_2": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "account_user_1": [
+            {
+              "es": "Mis Reservas"
+            },
+            {
+              "en": "My Reservations"
+            },
+            {
+              "po": "Minhas reservas"
+            }
+          ]
+        },
+        {
+          "account_user_2": [
+            {
+              "es": "Cerrar Sesión"
+            },
+            {
+              "en": "Logout"
+            },
+            {
+              "po": "Sair"
+            }
+          ]
+        },
+        {
+          "title_header": [
+            {
+              "es": "¿A dónde vas?"
+            },
+            {
+              "en": "Where are you going?"
+            },
+            {
+              "po": "Para onde vais"
+            }
+          ]
+        },
+        {
+          "subtitle_header": [
+            {
+              "es": "Escoge tu destino para ver todas las agencias y tours disponibles"
+            },
+            {
+              "en": "Chose your destination to see all available agencies and tours"
+            },
+            {
+              "po": "escolha o seu destino para ver todas as agências e passeios disponíveis"
+            }
+          ]
+        },
+        {
+          "button_search": [
+            {
+              "es": "Buscar"
+            },
+            {
+              "en": "Search"
+            },
+            {
+              "po": "Pesquisa"
+            }
+          ]
+        },
+        {
+          "title_section": [
+            {
+              "es": "Las tours más populares"
+            },
+            {
+              "en": "Popular tours"
+            },
+            {
+              "po": "Passeios turísticos mais populares"
+            }
+          ]
+        },
+        {
+          "button_card_left": [
+            {
+              "es": "Info"
+            },
+            {
+              "en": "Info"
+            },
+            {
+              "po": "Info"
+            }
+          ]
+        },
+        {
+          "button_card_right": [
+            {
+              "es": "Ver tours"
+            },
+            {
+              "en": "See tours"
+            },
+            {
+              "po": "veja tours"
+            }
+          ]
+        },
+        {
+          "social_footer": [
+            {
+              "es": "Síguemos"
+            },
+            {
+              "en": "Follow us"
+            },
+            {
+              "po": "Siga-nos"
+            }
+          ]
+        },
+        {
+          "copyright": [
+            {
+              "es": "Todos los derechos reservados."
+            },
+            {
+              "en": "All rights reserved."
+            },
+            {
+              "po": "© 2018 Go Tours. Todos os direitos reservados"
+            }
+          ]
+        }
+
+      ]
+
+    },
+    {
+      "nameview": "Error",
+      "elements": [
+        {
+          "sub_title": [
+            { "es": "Página no encontrada" },
+            { "en": "Page not found" },
+            { "po": "Página não encontrada" }
+          ]
+        },
+        {
+          "text": [
+            { "es": "Parece que la página que intentas visitar no existe.Por favor revisa la URL y prueba suerte otra vez." },
+            { "en": "Looks like the page you're trying to visit doesn't exist.Please check the URL and try your luck again." },
+            { "po": "Parece que a página que você está tentando visitar não existe. Verifique a URL e tente sua sorte novamente." }
+          ]
+        },
+        {
+          "back_button": [
+            { "es": "Volver al inicio" },
+            { "en": "Take me Home" },
+            { "po": "Voltar ao início" }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "Login",
+      "elements": [
+        {
+          "account_button_1": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "account_button_2": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "message_or": [
+            { "es": "o" },
+            { "en": "or" },
+            { "po": "o" }
+          ]
+        },
+        {
+          "input_email": [
+            {
+              "es": "correo electrónico"
+            },
+            {
+              "en": "email"
+            },
+            {
+              "po": "Correio eletrônico"
+            }
+          ]
+        },
+        {
+          "input_password": [
+            {
+              "es": "Contraseña"
+            },
+            {
+              "en": "Password"
+            },
+            {
+              "po": "Senha"
+            }
+          ]
+        },
+        {
+          "check_button": [
+            {
+              "es": "Recuérdame"
+            },
+            {
+              "en": "Remember me"
+            },
+            {
+              "po": "lembra-te de mim"
+            }
+          ]
+        },
+        {
+          "link_forget": [
+            {
+              "es": "¿Olvidadeste tu contraseña?"
+            },
+            {
+              "en": "Forgot password?"
+            },
+            {
+              "po": "Esqueceu a senha?"
+            }
+          ]
+        },
+        {
+          "login_button": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "error_alert_1": [
+            {
+              "es": "Debe introducir usuario y contraseña"
+            },
+            {
+              "en": "You must enter a username and password"
+            },
+            {
+              "po": "Você deve digitar o nome de usuário e senha"
+            }
+          ]
+        },
+        {
+          "error_alert_2": [
+            {
+              "es": "Debe introducir un usuario"
+            },
+            {
+              "en": "You must enter a username"
+            },
+            {
+              "po": "Você deve digitar o nome de usuário"
+            }
+          ]
+        },
+        {
+          "error_alert_3": [
+            {
+              "es": "Debe introducir una contraseña"
+            },
+            {
+              "en": "You must enter a password"
+            },
+            {
+              "po": "Você deve digitar o nome de senha"
+            }
+          ]
+        },
+        {
+          "error_alert_4": [
+            {
+              "es": "Debe introducir un correo electrónico válido"
+            },
+            {
+              "en": "You must enter a valid email"
+            },
+            {
+              "po": "Você deve inserir um email válido"
+            }
+          ]
+        },
+        {
+          "error_alert_5": [
+            {
+              "es": "Debe introducir una contraseña mayor a 7 caracteres"
+            },
+            {
+              "en": "You must enter a password greater than 7 characters"
+            },
+            {
+              "po": "Você deve digitar uma senha com mais de 7 caracteres"
+            }
+          ]
+        },
+        {
+          "error_alert_6": [
+            {
+              "es": "Debe introducir una combinación de caracteres entre letras y números"
+            },
+            {
+              "en": "You must enter a combination of characters between letters and numbers"
+            },
+            {
+              "po": "Debe introducir una combinación de caracteres entre letras y números"
+            }
+          ]
+        },
+        {
+          "error_alert_7": [
+            {
+              "es": "Lo siento, tu usuario y/o contraseña son incorrectos. Por favor verificar."
+            },
+            {
+              "en": "Sorry, your username and / or password are incorrect. Please verify."
+            },
+            {
+              "po": "Desculpe, seu nome de usuário e / ou senha estão incorretos. Por favor, verifique.Desculpe, seu nome de usuário e / ou senha estão incorretos. Por favor, verifique."
+            }
+          ]
+        },
+        {
+          "question_login": [
+            {
+              "es": "¿No tienes una cuenta?"
+            },
+            {
+              "en": "Don't have an account yet?"
+            },
+            {
+              "po": "Ainda ñao tem uma conta?"
+            }
+          ]
+        },
+
+        {
+          "register_link": [
+            {
+              "es": "Regístrate"
+            },
+            {
+              "en": "Sign in"
+            },
+            {
+              "po": "Cadastre-se"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "Register",
+      "elements": [
+        {
+          "account_button_1": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "account_button_2": [
+            {
+              "es": "Ingresar"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Entrar"
+            }
+          ]
+        },
+        {
+          "message_or": [
+            { "es": "o" },
+            { "en": "or" },
+            { "po": "o" }
+          ]
+        },
+        {
+          "input_name": [
+            {
+              "es": "Primer Nombre"
+            },
+            {
+              "en": "First Name"
+            },
+            {
+              "po": "Primeiro nome"
+            }
+          ]
+        },
+        {
+          "input_surname": [
+            {
+              "es": "Primer apellido"
+            },
+            {
+              "en": "First surname"
+            },
+            {
+              "po": "Primeiro apelido"
+            }
+          ]
+        },
+        {
+          "input_email": [
+            {
+              "es": "Correo Electrónico"
+            },
+            {
+              "en": "Email Address"
+            },
+            {
+              "po": "Email"
+            }
+          ]
+        },
+        {
+          "input_password": [
+            {
+              "es": "Contraseña"
+            },
+            {
+              "en": "Password"
+            },
+            {
+              "po": "Senha"
+            }
+          ]
+        },
+        {
+          "register_button": [
+            {
+              "es": "Regístrate"
+            },
+            {
+              "en": "Sign up"
+            },
+            {
+              "po": "Cadastre-se"
+            }
+          ]
+        },
+        {
+          "error_alert_1": [
+            {
+              "es": "Debe llenar todos los campos"
+            },
+            {
+              "en": "You must fill all the fields"
+
+            },
+            {
+              "po": "Você deve preencher todos os campos"
+
+            }
+          ]
+        },
+        {
+          "error_alert_2": [
+            {
+              "es": "Debe introducir un nombre"
+            },
+            {
+              "en": "You must enter a name"
+
+            },
+            {
+              "po": "Você deve digitar um nome"
+
+            }
+          ]
+        },
+        {
+          "error_alert_3": [
+            {
+              "es": "Debe introducir un apellido"
+            },
+            {
+              "en": "You must enter a last name"
+
+            },
+            {
+              "po": "Você deve digitar um sobrenome"
+
+            }
+          ]
+        },
+        {
+          "error_alert_4": [
+            {
+              "es": "Debe introducir un email"
+            },
+            {
+              "en": "You must enter an email"
+
+            },
+            {
+              "po": "Você deve digitar um email"
+
+            }
+          ]
+        },
+        {
+          "error_alert_5": [
+            {
+              "es": "Debe introducir una contraseña"
+            },
+            {
+              "en": "You must enter a password"
+
+            },
+            {
+              "po": "Você deve digitar uma senha"
+
+            }
+          ]
+        },
+        {
+          "error_alert_6": [
+            {
+              "es": "Debe introducir un correo electrónico válido"
+            },
+            {
+              "en": "You must enter a valid email"
+
+            },
+            {
+              "po": "Você deve inserir um email válido"
+
+            }
+          ]
+        },
+        {
+          "error_alert_7": [
+            {
+              "es": "Debe introducir un nombre válido mayor a 2 carácteres"
+            },
+            {
+              "en": "You must enter a valid name greater than 2 characters"
+
+            },
+            {
+              "po": "Você deve digitar um nome válido com mais de 2 caracteres"
+
+            }
+          ]
+        },
+        {
+          "error_alert_8": [
+            {
+              "es": "Debe introducir un apellido válido mayor a 2 carácteres"
+            },
+            {
+              "en": "You must enter a valid last name greater than 2 characters"
+
+            },
+            {
+              "po": "Você deve inserir um sobrenome válido com mais de 2 caracteres"
+
+            }
+          ]
+        },
+        {
+          "error_alert_9": [
+            {
+              "es": "Debe introducir una contraseña mayor a 7 carácteres"
+            },
+            {
+              "en": "You must enter a password greater than 7 characters"
+
+            },
+            {
+              "po": "Você deve digitar uma senha com mais de 7 caracteres"
+
+            }
+          ]
+        },
+        {
+          "error_alert_10": [
+            {
+              "es": "Debe introducir una combinación de caracteres entre letras y números"
+            },
+            {
+              "en": "You must enter a combination of characters between letters and numbers"
+
+            },
+            {
+              "po": "Você deve inserir uma combinação de caracteres entre letras e números"
+
+            }
+          ]
+        },
+        {
+          "question_register": [
+            {
+              "es": "¿Ya tienes una cuenta?"
+            },
+            {
+              "en": "Already have a account?"
+            },
+            {
+              "po": "você já tem uma conta?"
+            }
+          ]
+        },
+        {
+          "signin_link": [
+            {
+              "es": "Iniciar sesión"
+            },
+            {
+              "en": "Login"
+            },
+            {
+              "po": "Accesar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "City",
+      "elements": [
+        {
+          "input_header": [
+            {
+              "es": "Dinos tu lugar de viaje"
+            },
+            {
+              "en": "Tell us your place of travel"
+            },
+            {
+              "po": "Diga-nos o seu local de viagem"
+            }
+          ]
+        },
+        {
+          "button_header": [
+            {
+              "es": "Buscar"
+            },
+            {
+              "en": "Search"
+            },
+            {
+              "po": "Pesquisa"
+            }
+          ]
+        },
+        {
+          "tab_title_1": [
+            {
+              "es": "¿Qué hacer?"
+            },
+            {
+              "en": "What to do?"
+            },
+            {
+              "po": "o que fazer?"
+            }
+          ]
+        },
+        {
+          "tab_title_2": [
+            {
+              "es": "Tours Disponibles"
+            },
+            {
+              "en": "Available Tours"
+            },
+            {
+              "po": "Passeios Disponíveis"
+            }
+          ]
+        },
+        {
+          "tab_1_items_title": [
+            {
+              "es": "Datos generales"
+            },
+            {
+              "en": "General information"
+            },
+            {
+              "po": "Dados gerais"
+            }
+          ]
+        },
+        {
+          "tab_1_item_1": [
+            {
+              "es": "Ubicación:"
+            },
+            {
+              "en": "Location:"
+            },
+            {
+              "po": "Localização:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_2": [
+            {
+              "es": "Altitud:"
+            },
+            {
+              "en": "Altitude:"
+            },
+            {
+              "po": "Altitude:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_3": [
+            {
+              "es": "Temperatura:"
+            },
+            {
+              "en": "Temperature:"
+            },
+            {
+              "po": "Temperatura:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_4": [
+            {
+              "es": "Población:"
+            },
+            {
+              "en": "Population:"
+            },
+            {
+              "po": "População:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_5": [
+            {
+              "es": "Producción agrícola:"
+            },
+            {
+              "en": "Agricultural population:"
+            },
+            {
+              "po": "População agrícola:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_6": [
+            {
+              "es": "Distritos:"
+            },
+            {
+              "en": "Districts"
+            },
+            {
+              "po": "Distritos:"
+            }
+          ]
+        },
+        {
+          "tab_1_item_6_1": [
+            {
+              "es": "m.s.n.m."
+            },
+            {
+              "en": "m.a.m.s.l."
+            },
+            {
+              "po": "m.a.d.n.d.m."
+            }
+          ]
+        },
+        {
+          "tab_1_item_6_2": [
+            {
+              "es": "habitantes"
+            },
+            {
+              "en": "population"
+            },
+            {
+              "po": "habitantes"
+            }
+          ]
+        },
+        {
+          "tab_1_subtitle": [
+            {
+              "es": "Lo más visitado"
+            },
+            {
+              "en": "Most visited places"
+            },
+            {
+              "po": "Os mais visitados"
+            }
+          ]
+        },
+        {
+          "button_card_left": [
+            {
+              "es": "Info"
+            },
+            {
+              "en": "Info"
+            },
+            {
+              "po": "Info"
+            }
+          ]
+        },
+        {
+          "button_card_right": [
+            {
+              "es": "Ver tours"
+            },
+            {
+              "en": "See tours"
+            },
+            {
+              "po": "Veja tours"
+            }
+          ]
+        },
+        {
+          "tab_2_dropdown_title": [
+            {
+              "es": "ordenar por:"
+            },
+            {
+              "en": "order by:"
+            },
+            {
+              "po": "ordenar por:"
+            }
+          ]
+        },
+        {
+          "tab_2_dropdown_opt": [
+            {
+              "es": "Recomendados"
+            },
+            {
+              "en": "Recommended"
+            },
+            {
+              "po": "Recomendado"
+            }
+          ]
+        },
+        {
+          "tab_2_dropdown_opt1": [
+            {
+              "es": "Menor precio"
+            },
+            {
+              "en": "Lowe price"
+            },
+            {
+              "po": "Menor preço"
+            }
+          ]
+        },
+        {
+          "tab_2_dropdown_opt2": [
+            {
+              "es": "Mayor precio"
+            },
+            {
+              "en": "Higher price"
+            },
+            {
+              "po": "Preço mais alto"
+            }
+          ]
+        },
+        {
+          "tab_2_dropdown_opt3": [
+            {
+              "es": "Lo más nuevo"
+            },
+            {
+              "en": "Most recent"
+            },
+            {
+              "po": "O mais novo"
+            }
+          ]
+        },
+        {
+          "filter_ttile": [
+            {
+              "es": "Filtros"
+            },
+            {
+              "en": "Filters"
+            },
+            {
+              "po": "Filtros"
+            }
+          ]
+        },
+        {
+          "filter_1_title": [
+            {
+              "es": "Clasificación de Tours"
+            },
+            {
+              "en": "Classification of tours"
+            },
+            {
+              "po": "Classificação de passeios"
+            }
+          ]
+        },
+        {
+          "filter_1_a": [
+            {
+              "es": "Ver todos los tours"
+            },
+            {
+              "en": "See all tours"
+            },
+            {
+              "po": "Veja todos os passeios"
+            }
+          ]
+        },
+        {
+          "filter_1_b": [
+            {
+              "es": "Culturales y temáticos"
+            },
+            {
+              "en": "Cultural and thematic"
+            },
+            {
+              "po": "cultural e temático"
+            }
+          ]
+        },
+        {
+          "filter_1_c": [
+            {
+              "es": "Escapadas de un día"
+            },
+            {
+              "en": "One_Day Getaway"
+            },
+            {
+              "po": "Fuga de um dia"
+            }
+          ]
+        },
+        {
+          "filter_1_d": [
+            {
+              "es": "Clases, talleres y vida nocturna"
+            },
+            {
+              "en": "Classes, workshops and nightlife"
+            },
+            {
+              "po": "Clases, talleres e vida nocturna"
+            }
+          ]
+        },
+        {
+          "filter_1_e": [
+            {
+              "es": "Para toda la familia"
+            },
+            {
+              "en": "For the entire family"
+            },
+            {
+              "po": "Para toda a família"
+            }
+          ]
+        },
+        {
+          "filter_1_f": [
+            {
+              "es": "Tours de dos días a más"
+            },
+            {
+              "en": "Two day tours"
+            },
+            {
+              "po": "Passeios de dois dias a mais"
+            }
+          ]
+        },
+        {
+          "filter_1_g": [
+            {
+              "es": "Actividades al aire libre"
+            },
+            {
+              "en": "Outdoor activities"
+            },
+            {
+              "po": "atividades ao ar livre"
+            }
+          ]
+        },
+        {
+          "filter_1_h": [
+            {
+              "es": "Tours privados y personalizados"
+            },
+            {
+              "en": "Private Customized Tours"
+            },
+            {
+              "po": "Passeios privados e personalizados"
+            }
+          ]
+        },
+        {
+          "filter_2_title": [
+            {
+              "es": "Precio"
+            },
+            {
+              "en": "Price"
+            },
+            {
+              "po": "Preco"
+            }
+          ]
+        },
+        {
+          "filter_2_a": [
+            {
+              "es": "300 a más"
+            },
+            {
+              "en": "300 or more"
+            },
+            {
+              "po": "300 ou mais"
+            }
+          ]
+        },
+        {
+          "filter_3_title": [
+            {
+              "es": "Duración"
+            },
+            {
+              "en": "Duration"
+            },
+            {
+              "po": "Duração"
+            }
+          ]
+        },
+        {
+          "filter_3_a": [
+            {
+              "es": "1 - 4 horas"
+            },
+            {
+              "en": "1 - 4 hours"
+            },
+            {
+              "po": "1 - 4 horas"
+            }
+          ]
+        },
+        {
+          "filter_3_b": [
+            {
+              "es": "4 horas - 1 día"
+            },
+            {
+              "en": "4 hours - 1 day"
+            },
+            {
+              "po": "4 horas - 1 dia"
+            }
+          ]
+        },
+        {
+          "filter_3_c": [
+            {
+              "es": "2 días"
+            },
+            {
+              "en": "2 days"
+            },
+            {
+              "po": "2 dias"
+            }
+          ]
+        },
+        {
+          "filter_3_d": [
+            {
+              "es": "3 días a más"
+            },
+            {
+              "en": "3 days or more"
+            },
+            {
+              "po": "3 dias ou mais"
+            }
+          ]
+        },
+        {
+          "filter_4_title": [
+            {
+              "es": "Puntación de agencias"
+            },
+            {
+              "en": "Agency score"
+            },
+            {
+              "po": "pontuação da agência"
+            }
+          ]
+        },
+        {
+          "filter_4_a": [
+            {
+              "es": "0 - 2 estrellas"
+            },
+            {
+              "en": "0 - 2 stars"
+            },
+            {
+              "po": "0 - 2 estrelas"
+            }
+          ]
+        },
+        {
+          "filter_4_b": [
+            {
+              "es": "3 - 4 estrellas"
+            },
+            {
+              "en": "3 - 4 stars"
+            },
+            {
+              "po": "3 - 4 estrelas"
+            }
+          ]
+        },
+        {
+          "filter_4_c": [
+            {
+              "es": "5 estrellas"
+            },
+            {
+              "en": "5 stars"
+            },
+            {
+              "po": "5 estrelas"
+            }
+          ]
+        },
+        {
+          "tab_2_content_title": [
+            {
+              "es": "Tours en"
+            },
+            {
+              "en": "Tours in"
+            },
+            {
+              "po": "Tours en"
+            }
+          ]
+        },
+        {
+          "tab_2_content_button_left": [
+            {
+              "es": "Info"
+            },
+            {
+              "en": "Info"
+            },
+            {
+              "po": "Info"
+            }
+          ]
+        },
+        {
+          "tab_2_content_button_right": [
+            {
+              "es": "Ver agencias"
+            },
+            {
+              "en": "Agencies"
+            },
+            {
+              "po": "Ver agências"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "Tour",
+      "elements": [
+        {
+          "filter_tour_label1": [
+            {
+              "es": "Día de tour: "
+            },
+            {
+              "en": "Day tour: "
+            },
+            {
+              "po": "Dia do tour: "
+            }
+          ]
+        },
+        {
+          "filter_tour_input1": [
+            {
+              "es": "Fecha de salida"
+            },
+            {
+              "en": "Departure date"
+            },
+            {
+              "po": "Data de saída"
+            }
+          ]
+        },
+        {
+          "filter_tour_label2": [
+            {
+              "es": "Personas:"
+            },
+            {
+              "en": "People:"
+            },
+            {
+              "po": "Pessoas:"
+            }
+          ]
+        },
+        {
+          "filter_tour_input2": [
+            {
+              "es": "Número de personas"
+            },
+            {
+              "en": "Number of people"
+            },
+            {
+              "po": "número de pessoas"
+            }
+          ]
+        },
+        {
+          "button_search": [
+            {
+              "es": "Buscar"
+            },
+            {
+              "en": "Search"
+            },
+            {
+              "po": "Pesquisa"
+            }
+          ]
+        },
+        {
+          "post_item_1": [
+            {
+              "es": "Agencia:"
+            },
+            {
+              "en": "Agency:"
+            },
+            {
+              "po": "Agência:"
+            }
+          ]
+        },
+
+        {
+          "post_item_2": [
+            {
+              "es": "Duración:"
+            },
+            {
+              "en": "Duration:"
+            },
+            {
+              "po": "Duracion:"
+            }
+          ]
+        },
+        {
+          "post_item_2_1": [
+            {
+              "es": "horas"
+            },
+            {
+              "en": "hours"
+            },
+            {
+              "po": "horas"
+            }
+          ]
+        },
+        {
+          "post_item_3": [
+            {
+              "es": "Pasajeros Mínimos:"
+            },
+            {
+              "en": "Minimum passengers:"
+            },
+            {
+              "po": "Passageiros mínimos:"
+            }
+          ]
+        },
+        {
+          "post_item_3_1": [
+            {
+              "es": "Persona(s)"
+            },
+            {
+              "en": "Person(s)"
+            },
+            {
+              "po": "Pessoa(s)"
+            }
+          ]
+        },
+        {
+          "post_item_4": [
+            {
+              "es": " Tiempo Anticipado de compra:"
+            },
+            {
+              "en": "Anticipated Purchase:"
+            },
+            {
+              "po": "Tempo de compra antecipado:"
+            }
+          ]
+        },
+        {
+          "post_item_4_1": [
+            {
+              "es": "Horas"
+            },
+            {
+              "en": "Hours"
+            },
+            {
+              "po": "Horas"
+            }
+          ]
+        },
+        {
+          "post_item_5": [
+            {
+              "es": "Por persona"
+            },
+            {
+              "en": "Per person"
+            },
+            {
+              "po": "Por pessoa"
+            }
+          ]
+        },
+        {
+          "post_checkbox": [
+            {
+              "es": "Comparar"
+            },
+            {
+              "en": "Compare"
+            },
+            {
+              "po": "Comparar"
+            }
+          ]
+        },
+        {
+          "post_button_left": [
+            {
+              "es": "Info"
+            },
+            {
+              "en": "Info"
+            },
+            {
+              "po": "Info"
+            }
+          ]
+        },
+        {
+          "post_button_right": [
+            {
+              "es": "Comprar"
+            },
+            {
+              "en": "Buy now"
+            },
+            {
+              "po": "Comprar"
+            }
+          ]
+        },
+        {
+          "post_info_text": [
+            {
+              "es": "Cancelación gratis"
+            },
+            {
+              "en": "Free cancellation"
+            },
+            {
+              "po": "Cancelamento gratuito"
+            }
+          ]
+        },
+        {
+          "modal_item_1": [
+            {
+              "es": "Punto de partida"
+            },
+            {
+              "en": "Starting point"
+            },
+            {
+              "po": "Ponto de partida"
+            }
+          ]
+        },
+        {
+          "modal_item_2": [
+            {
+              "es": "Itinerario"
+            },
+            {
+              "en": "Itinerary"
+            },
+            {
+              "po": "Itinerário"
+            }
+          ]
+        },
+        {
+          "modal_item_3": [
+            {
+              "es": "Incluye"
+            },
+            {
+              "en": "Include"
+            },
+            {
+              "po": "Inclui"
+            }
+          ]
+        },
+        {
+          "modal_item_4": [
+            {
+              "es": "Notas"
+            },
+            {
+              "en": "Note"
+            },
+            {
+              "po": "Anotações"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "Checkout",
+      "elements": [
+        {
+          "post_info_button": [
+            {
+              "es": "Cancelar"
+            },
+            {
+              "en": "Cancel"
+            },
+            {
+              "po": "Cancelar"
+            }
+          ]
+        },
+        {
+          "post_info_text": [
+            {
+              "es": "Cancelación gratis"
+            },
+            {
+              "en": "Free cancellation"
+            },
+            {
+              "po": "Cancelamento gratuito"
+            }
+          ]
+        },
+        {
+          "post_item_1": [
+            {
+              "es": "Agencia:"
+            },
+            {
+              "en": "Agency:"
+            },
+            {
+              "po": "Agência:"
+            }
+          ]
+        },
+        {
+          "post_item_2": [
+            {
+              "es": "Duración:"
+            },
+            {
+              "en": "Duration:"
+            },
+            {
+              "po": "Duracion:"
+            }
+          ]
+        },
+        {
+          "post_item_2_1": [
+            {
+              "es": "horas"
+            },
+            {
+              "en": "hours"
+            },
+            {
+              "po": "horas"
+            }
+          ]
+        },
+        {
+          "post_item_3": [
+            {
+              "es": "Pasajeros mínimos:"
+            },
+            {
+              "en": "Minimum passengers:"
+            },
+            {
+              "po": "Passageiros mínimos:"
+            }
+          ]
+        },
+        {
+          "post_item_3_1": [
+            {
+              "es": "personas"
+            },
+            {
+              "en": "persons"
+            },
+            {
+              "po": "pessoas"
+            }
+          ]
+        },
+        {
+          "post_item_4": [
+            {
+              "es": " Tiempo Anticipado de compra:"
+            },
+            {
+              "en": "Anticipated Purchase:"
+            },
+            {
+              "po": "Tempo de compra antecipado:"
+            }
+          ]
+        },
+        {
+          "post_item_4_1": [
+            {
+              "es": "horas"
+            },
+            {
+              "en": "hours"
+            },
+            {
+              "po": "horas"
+            }
+          ]
+        },
+
+        {
+          "form_1_input_a": [
+            {
+              "es": "Duración"
+            },
+            {
+              "en": "Duration"
+            },
+            {
+              "po": "Duração"
+            }
+          ]
+        },
+        {
+          "form_1_input_b": [
+            {
+              "es": "Persona"
+            },
+            {
+              "en": "Person"
+            },
+            {
+              "po": "pessoa"
+            }
+          ]
+        },
+        {
+          "form_1_input_c": [
+            {
+              "es": "Comentarios"
+            },
+            {
+              "en": "Comments"
+            },
+            {
+              "po": "Comentários"
+            }
+          ]
+        },
+        {
+          "form_1_input_d": [
+            {
+              "es": "Tarifa"
+            },
+            {
+              "en": "Rate"
+            },
+            {
+              "po": "Taxar"
+            }
+          ]
+        },
+        {
+          "form_1_input_e": [
+            {
+              "es": "RUC"
+            },
+            {
+              "en": "RUC"
+            },
+            {
+              "po": "RUC"
+            }
+          ]
+        },
+        {
+          "form_1_input_f": [
+            {
+              "es": "Dirección"
+            },
+            {
+              "en": "Address"
+            },
+            {
+              "po": "Direção"
+            }
+          ]
+        },
+        {
+          "form_1_input_g": [
+            {
+              "es": "Teléfono"
+            },
+            {
+              "en": "Phone"
+            },
+            {
+              "po": "Telefone"
+            }
+          ]
+        },
+        {
+          "form_1_input_h": [
+            {
+              "es": "Correo"
+            },
+            {
+              "en": "Email"
+            },
+            {
+              "po": "Correo"
+            }
+          ]
+        },
+        {
+          "form_1_input_i": [
+            {
+              "es": "Web"
+            },
+            {
+              "en": "Web"
+            },
+            {
+              "po": "Web"
+            }
+          ]
+        },
+        {
+          "form_1_input_j": [
+            {
+              "es": "Otros"
+            },
+            {
+              "en": "Others"
+            },
+            {
+              "po": "Outros"
+            }
+          ]
+        },
+        {
+          "form_2_title": [
+            {
+              "es": "Tus datos"
+            },
+            {
+              "en": "Personal information"
+            },
+            {
+              "po": "Seus dados"
+            }
+          ]
+        },
+        {
+          "form_2_input_a": [
+            {
+              "es": "Nombres"
+            },
+            {
+              "en": "First Names"
+            },
+            {
+              "po": "Primer Nomes"
+            }
+          ]
+        },
+        {
+          "form_2_input_b": [
+            {
+              "es": "Apellidos"
+            },
+            {
+              "en": "Surnames"
+            },
+            {
+              "po": "Apelido"
+            }
+          ]
+        },
+        {
+          "form_2_input_c": [
+            {
+              "es": "Número de documento"
+            },
+            {
+              "en": "Document number"
+            },
+            {
+              "po": "Número do documento"
+            }
+          ]
+        },
+        {
+          "form_2_input_d": [
+            {
+              "es": "Teléfono"
+            },
+            {
+              "en": "Phone"
+            },
+            {
+              "po": "Telefone"
+            }
+          ]
+        },
+        {
+          "form_2_input_e": [
+            {
+              "es": "Correo electrónico"
+            },
+            {
+              "en": "Email"
+            },
+            {
+              "po": "Correio"
+            }
+          ]
+        },
+        {
+          "form_2_input_f": [
+            {
+              "es": "Total a Pagar"
+            },
+            {
+              "en": "Total to pay"
+            },
+            {
+              "po": "Total a Pagar"
+            }
+          ]
+        },
+        {
+          "form_2_label": [
+            {
+              "es": "Datos del pedido"
+            },
+            {
+              "en": "Order information"
+            },
+            {
+              "po": "Informação da encomenda"
+            }
+          ]
+        },
+        {
+          "form_2_input_g": [
+            {
+              "es": "Cantidad de personas para el tour"
+            },
+            {
+              "en": "Number of participants"
+            },
+            {
+              "po": "Número de pessoas para o passeio"
+            }
+          ]
+        },
+        {
+          "form_2_input_h": [
+            {
+              "es": "Fecha del tour"
+            },
+            {
+              "en": "Tour date"
+            },
+            {
+              "po": "Data"
+            }
+          ]
+        },
+        {
+          "form_3_title": [
+            {
+              "es": "Pago con tarjeta"
+            },
+            {
+              "en": "Credit card payment"
+            },
+            {
+              "po": "Pagamento com cartão"
+            }
+          ]
+        },
+        {
+          "form_3_input": [
+            {
+              "es": "N° de tarjeta"
+            },
+            {
+              "en": "Credit Card number"
+            },
+            {
+              "po": "Número de cartão"
+            }
+          ]
+        },
+        {
+          "form_3_label_a": [
+            {
+              "es": "Fecha de vencimiento"
+            },
+            {
+              "en": "Expiration date"
+            },
+            {
+              "po": "Data de vencimento"
+            }
+          ]
+        },
+        {
+          "form_3_label_b": [
+            {
+              "es": "Código de seguridad"
+            },
+            {
+              "en": "Security code"
+            },
+            {
+              "po": "Código de segurança"
+            }
+          ]
+        },
+        {
+          "form_3_button": [
+            {
+              "es": "Continuar"
+            },
+            {
+              "en": "Continue"
+            },
+            {
+              "po": "Continuar"
+            }
+          ]
+        },
+        {
+          "error_1": [
+            {
+              "es": "Debe llenar todos los campos para continuar"
+            },
+            {
+              "en": "Please fill in all required fields"
+            },
+            {
+              "po": "Please fill in all required fields"
+            }
+          ]
+        },
+        {
+          "error_2": [
+            {
+              "es": "Debe ingresar un nombre válido"
+            },
+            {
+              "en": "You must enter a valid name"
+            },
+            {
+              "po": "Você deve digitar um nome válido"
+            }
+          ]
+        },
+        {
+          "error_3": [
+            {
+              "es": "Debe ingresar un nombre mayor a dos caracteres"
+            },
+            {
+              "en": "You must enter a name greater than two characters"
+            },
+            {
+              "po": "Você deve digitar um nome maior que dois caracteres"
+            }
+          ]
+        },
+        {
+          "error_3": [
+            {
+              "es": "Debe ingresar un nombre mayor a dos caracteres"
+            },
+            {
+              "en": "You must enter a name greater than two characters"
+            },
+            {
+              "po": "Você deve digitar um nome maior que dois caracteres"
+            }
+          ]
+        },
+        {
+          "error_4": [
+            {
+              "es": "Debe ingresar un apellido válido"
+            },
+            {
+              "en": "You must enter a valid surname"
+            },
+            {
+              "po": "Você deve inserir um sobrenome válido"
+            }
+          ]
+        },
+        {
+          "error_5": [
+            {
+              "es": "Debe ingresar un apellido mayor a dos caracteres"
+            },
+            {
+              "en": "You must enter a last name greater than two characters"
+            },
+            {
+              "po": "Você deve inserir um sobrenome com mais de dois caracteres"
+            }
+          ]
+        },
+        {
+          "error_6": [
+            {
+              "es": "Debe ingresar un número de documento válido"
+            },
+            {
+              "en": "You must enter a valid document number"
+            },
+            {
+              "po": "Você deve inserir um número de documento válido"
+            }
+          ]
+        },
+        {
+          "error_7": [
+            {
+              "es": "Debe ingresar un número telefónico válido"
+            },
+            {
+              "en": "You must enter a valid phone number"
+            },
+            {
+              "po": "Você deve digitar um número de telefone válido"
+            }
+          ]
+        },
+        {
+          "error_8": [
+            {
+              "es": "Debe ingresar un email válido"
+            },
+            {
+              "en": "You must enter a valid email"
+            },
+            {
+              "po": "Você deve inserir um email válido"
+            }
+          ]
+        },
+        {
+          "error_9": [
+            {
+              "es": "Debe ingresar una cantidad de personas válida. Máximo 99 personas"
+            },
+            {
+              "en": "You must enter a valid number of people. Maximum 99 people"
+            },
+            {
+              "po": "Você deve inserir um número válido de pessoas. Máximo de 99 pessoas"
+            }
+          ]
+        },
+        {
+          "error_10": [
+            {
+              "es": "Ingrese un número de tarjeta válido"
+            },
+            {
+              "en": "Enter a valid card number"
+            },
+            {
+              "po": "Digite um número de cartão válido"
+            }
+          ]
+        },
+        {
+          "error_11": [
+            {
+              "es": "Ingrese un código de seguridad válido"
+            },
+            {
+              "en": "Enter a valid security code"
+            },
+            {
+              "po": "Digite um código de segurança válido"
+            }
+          ]
+        },
+        {
+          "error_12": [
+            {
+              "es": "Digite la fecha de reserva"
+            },
+            {
+              "en": "Enter reserve date"
+            },
+            {
+              "po": "Insira a data da reserva"
+            }
+          ]
+        },
+        {
+          "error_13": [
+            {
+              "es": "La fecha de reserva no puede se menor al tiempo de compra anticipado del Tour"
+            },
+            {
+              "en": "The reservation date can not be less than the anticipated purchase time of the Tour"
+            },
+            {
+              "po": "A data da reserva não pode ser inferior ao tempo de compra antecipado do Tour"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "DetailReservation",
+      "elements": [
+        {
+          "confirm_title": [
+            { "es": "Hola," },
+            { "en": "Hi, " },
+            { "po": "Olá, " }
+          ]
+        },
+        {
+          "message_confirm_part_1": [
+            { "es": "Su reserva: " },
+            { "en": "Your reservation: " },
+            { "po": "Sua reserva: " }
+          ]
+
+        },
+        {
+          "message_confirm_part_2": [
+            { "es": " acá los detalles" },
+            { "en": " here the details" },
+            { "po": " aqui os detalhes" }
+          ]
+
+        },
+        {
+          "c_input_1": [
+            { "es": "Número de Reserva" },
+            { "en": "Reserve number" },
+            { "po": "Número da reserva" }
+          ]
+
+        },
+        {
+          "c_input_2": [
+            { "es": "Nombre y apellido" },
+            { "en": "Name and lastname" },
+            { "po": "Nome e sobrenome" }
+          ]
+
+        },
+        {
+          "c_input_3": [
+            { "es": "Tipo de Documento" },
+            { "en": "Type of Document" },
+            { "po": "Tipo de Documento" }
+          ]
+
+        },
+        {
+          "c_input_4": [
+            { "es": "Correo de confirmación" },
+            { "en": "Confirmation email" },
+            { "po": "Email de confirmação" }
+          ]
+
+        },
+        {
+          "c_input_5": [
+            { "es": "Número de Documento" },
+            { "en": "Number of Document" },
+            { "po": "Número do documento" }
+          ]
+
+        },
+        {
+          "c_input_6": [
+            { "es": "Teléfono" },
+            { "en": "Phone Number" },
+            { "po": "Número de Telefone" }
+          ]
+
+        },
+        {
+          "c_input_7": [
+            { "es": "Número de personas para el tour" },
+            { "en": "Number of people per tour" },
+            { "po": "Número de pessoas para o passeio" }
+          ]
+
+        },
+        {
+          "c_input_8": [
+            { "es": "Pago efectuado" },
+            { "en": "Effected Amount " },
+            { "po": "Pagamento realizado" }
+          ]
+
+        },
+        {
+          "c_input_9": [
+            { "es": "Fecha del pedido" },
+            { "en": "Order date" },
+            { "po": "Data do pedido" }
+          ]
+
+        },
+        {
+          "c_input_10": [
+            { "es": "Código de Transacción (Pasarela de pago)" },
+            { "en": "Transaction Code (Payment gateway)" },
+            { "po": "Código de transação (gateway de pagamento)" }
+          ]
+
+        },
+        {
+          "c_button_2": [
+            { "es": "Ir a mis reservas" },
+            { "en": "My reservations" },
+            { "po": "Vá para minhas reservas" }
+          ]
+
+        },
+        {
+          "c_button_3": [
+            { "es": "Imprimir" },
+            { "en": "Print" },
+            { "po": "Imprimir" }
+          ]
+
+        }
+
+      ]
+    },
+    {
+      "nameview": "MyReservation",
+      "elements": [
+        {
+          "post_info_text": [
+            {
+              "es": "Cancelación gratis"
+            },
+            {
+              "en": "Free cancellation"
+            },
+            {
+              "po": "Cancelamento gratuito"
+            }
+          ]
+        },
+        {
+          "info_user_1": [
+            { "es": "Nacionalidad" },
+            { "en": "Nationality" },
+            { "po": "Nacionalidade" }
+
+          ]
+        },
+        {
+          "info_user_2": [
+            { "es": "Región" },
+            { "en": "Region" },
+            { "po": "Região" }
+
+          ]
+        },
+        {
+          "info_user_3": [
+            { "es": "Ciudad" },
+            { "en": "City" },
+            { "po": "Cidade" }
+
+          ]
+        },
+        {
+          "info_user_4": [
+            { "es": "Correo" },
+            { "en": "Email" },
+            { "po": "Correio" }
+
+          ]
+        },
+        {
+          "info_user_5": [
+            { "es": "Edad" },
+            { "en": "Age" },
+            { "po": "Idade" }
+
+          ]
+        },
+        {
+          "info_user_6": [
+            { "es": "Teléfono" },
+            { "en": "Phone" },
+            { "po": "Telefone" }
+
+          ]
+        },
+        {
+          "info_user_button": [
+            { "es": "Volver a GOTOUR" },
+            { "en": "Back to GOTOUR" },
+            { "po": "Voltar ao GOTOUR" }
+
+          ]
+        },
+        {
+          "re_post_title": [
+            { "es": "Mis reservas" },
+            { "en": "My reservations" },
+            { "po": "Minhas reservas" }
+
+          ]
+        },
+        {
+          "post_item_1": [
+            {
+              "es": "Agencia:"
+            },
+            {
+              "en": "Agency:"
+            },
+            {
+              "po": "Agência:"
+            }
+          ]
+        },
+        {
+          "post_item_2": [
+            {
+              "es": "Duración:"
+            },
+            {
+              "en": "Duration:"
+            },
+            {
+              "po": "Duracion:"
+            }
+          ]
+        },
+        {
+          "post_item_2_1": [
+            {
+              "es": "horas"
+            },
+            {
+              "en": "hours"
+            },
+            {
+              "po": "horas"
+            }
+          ]
+        },
+        {
+          "post_item_3": [
+            {
+              "es": "Pasajeros mínimos:"
+            },
+            {
+              "en": "Minimum passengers:"
+            },
+            {
+              "po": "Passageiros mínimos:"
+            }
+          ]
+        },
+        {
+          "post_item_3_1": [
+            {
+              "es": "personas"
+            },
+            {
+              "en": "persons"
+            },
+            {
+              "po": "pessoas"
+            }
+          ]
+        },
+        {
+          "post_item_4": [
+            {
+              "es": " Tiempo Anticipado de compra:"
+            },
+            {
+              "en": "Anticipated Purchase:"
+            },
+            {
+              "po": "Tempo de compra antecipado:"
+            }
+          ]
+        },
+        {
+          "post_item_4_1": [
+            {
+              "es": "horas"
+            },
+            {
+              "en": "hours"
+            },
+            {
+              "po": "horas"
+            }
+          ]
+        },
+        {
+          "post_item_5": [
+            {
+              "es": "Estado de la reserva:"
+            },
+            {
+              "en": "Booking status:"
+            },
+            {
+              "po": "Estado da minha reserva: "
+            }
+          ]
+        },
+        {
+          "post_item_6": [
+            {
+              "es": "Estado de la reembolso:"
+            },
+            {
+              "en": "Refund Status:"
+            },
+            {
+              "po": "Status do reembolso: "
+            }
+          ]
+        },
+
+        {
+          "post_item_5_1": [
+            {
+              "es": "Activa"
+            },
+            {
+              "en": "Active"
+            },
+            {
+              "po": "Ativo"
+            }
+          ]
+        },
+        {
+          "post_item_5_2": [
+            {
+              "es": "Cancelado"
+            },
+            {
+              "en": "Cancelled"
+            },
+            {
+              "po": "Cancelado"
+            }
+          ]
+        },
+        {
+          "post_item_6_1": [
+            {
+              "es": "Aprobado"
+            },
+            {
+              "en": "Approved"
+            },
+            {
+              "po": "Aprovado"
+            }
+          ]
+        },
+        {
+          "r_post_button_1": [
+            { "es": "Anular y Pedír Rembolso" },
+            { "en": "Cancel and ask for refund" },
+            { "po": "Cancelar e pedir reembolso" }
+
+          ]
+        },
+        {
+          "r_post_button_1_1": [
+            { "es": "Anular" },
+            { "en": "Cancel" },
+            { "po": "Cancelar" }
+
+          ]
+        },
+        {
+          "r_post_button_2": [
+            { "es": "Ver detalles" },
+            { "en": "Details" },
+            { "po": "Ver detalhes" }
+
+          ]
+        },
+        {
+          "r_text_qualify_user": [
+            { "es": "Ya ha calificado!" },
+            { "en": "You have already qualified!" },
+            { "po": "Você já se qualificou!" }
+
+          ]
+        }
+      ]
+    },
+    {
+      "nameview": "Confirmation",
+      "elements": [
+        {
+          "confirm_title": [
+            { "es": "Gracias," },
+            { "en": "Thank you, " },
+            { "po": "Obrigada, " }
+          ]
+        },
+        {
+          "message_confirm_part_1": [
+            { "es": "Su reserva a " },
+            { "en": "Your reservation to " },
+            { "po": "Sua reserva para " }
+          ]
+
+        },
+        {
+          "message_confirm_part_2": [
+            { "es": " ha sido realizada" },
+            { "en": " It has been realized" },
+            { "po": " foi feito" }
+          ]
+
+        },
+        {
+          "c_input_1": [
+            { "es": "Número de Reserva" },
+            { "en": "Reserve number" },
+            { "po": "Número da reserva" }
+          ]
+
+        },
+        {
+          "c_input_2": [
+            { "es": "Nombre y apellido" },
+            { "en": "Name and lastname" },
+            { "po": "Nome e sobrenome" }
+          ]
+
+        },
+        {
+          "c_input_3": [
+            { "es": "Tipo de Documento" },
+            { "en": "Type of Document" },
+            { "po": "Tipo de Documento" }
+          ]
+
+        },
+        {
+          "c_input_4": [
+            { "es": "Correo de confirmación" },
+            { "en": "Confirmation email" },
+            { "po": "Email de confirmação" }
+          ]
+
+        },
+        {
+          "c_input_5": [
+            { "es": "Número de Documento" },
+            { "en": "Number of Document" },
+            { "po": "Número do documento" }
+          ]
+
+        },
+        {
+          "c_input_6": [
+            { "es": "Teléfono" },
+            { "en": "Phone Number" },
+            { "po": "Número de Telefone" }
+          ]
+
+        },
+        {
+          "c_input_7": [
+            { "es": "Número de personas para el tour" },
+            { "en": "Number of people per tour" },
+            { "po": "Número de pessoas para o passeio" }
+          ]
+
+        },
+        {
+          "c_input_8": [
+            { "es": "Pago efectuado" },
+            { "en": "Effected Amount " },
+            { "po": "Pagamento realizado" }
+          ]
+
+        },
+        {
+          "c_input_9": [
+            { "es": "Fecha del pedido" },
+            { "en": "Order date" },
+            { "po": "Data do pedido" }
+          ]
+
+        },
+        {
+          "c_input_10": [
+            { "es": "Código de Transacción (Pasarela de pago)" },
+            { "en": "Transaction Code (Payment gateway)" },
+            { "po": "Código de transação (gateway de pagamento)" }
+          ]
+
+        },
+        {
+          "c_button_2": [
+            { "es": "Ir a mis reservas" },
+            { "en": "My reservations" },
+            { "po": "Vá para minhas reservas" }
+          ]
+
+        },
+        {
+          "c_button_3": [
+            { "es": "Imprimir" },
+            { "en": "Print" },
+            { "po": "Imprimir" }
+          ]
+
+        }
+
+      ]
+    }
+
+
+
+  ]
+    
+  }

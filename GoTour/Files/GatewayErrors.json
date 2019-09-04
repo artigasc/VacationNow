@@ -1,0 +1,145 @@
+{
+  "GatewayErrors": [
+    {
+      "Key": "ERROR",
+      "Value": "5"
+    },
+    {
+      "Key": "ANTIFRAUD_REJECTED",
+      "Value": "6"
+    },
+    {
+      "Key": "PAYMENT_NETWORK_REJECTED",
+      "Value": "7"
+    },
+    {
+      "Key": "ENTITY_DECLINED",
+      "Value": "8"
+    },
+    {
+      "Key": "INTERNAL_PAYMENT_PROVIDER_ERROR",
+      "Value": "9"
+    },
+    {
+      "Key": "INACTIVE_PAYMENT_PROVIDER",
+      "Value": "10"
+    },
+    {
+      "Key": "DIGITAL_CERTIFICATE_NOT_FOUND",
+      "Value": "11"
+    },
+    {
+      "Key": "INVALID_EXPIRATION_DATE_OR_SECURITY_CODE",
+      "Value": "12"
+    },
+    {
+      "Key": "INVALID_RESPONSE_PARTIAL_APPROVAL",
+      "Value": "13"
+    },
+    {
+      "Key": "INSUFFICIENT_FUNDS",
+      "Value": "14"
+    },
+    {
+      "Key": "CREDIT_CARD_NOT_AUTHORIZED_FOR_INTERNET_TRANSACTIONS",
+      "Value": "15"
+    },
+    {
+      "Key": "INVALID_TRANSACTION",
+      "Value": "16"
+    },
+    {
+      "Key": "INVALID_CARD",
+      "Value": "17"
+    },
+    {
+      "Key": "EXPIRED_CARD",
+      "Value": "18"
+    },
+    {
+      "Key": "RESTRICTED_CARD",
+      "Value": "19"
+    },
+    {
+      "Key": "CONTACT_THE_ENTITY",
+      "Value": "20"
+    },
+    {
+      "Key": "REPEAT_TRANSACTION",
+      "Value": "21"
+    },
+    {
+      "Key": "ENTITY_MESSAGING_ERROR",
+      "Value": "22"
+    },
+    {
+      "Key": "BANK_UNREACHABLE",
+      "Value": "23"
+    },
+    {
+      "Key": "EXCEEDED_AMOUNT",
+      "Value": "24"
+    },
+    {
+      "Key": "NOT_ACCEPTED_TRANSACTION",
+      "Value": "25"
+    },
+    {
+      "Key": "ERROR_CONVERTING_TRANSACTION_AMOUNTS",
+      "Value": "26"
+    },
+    {
+      "Key": "EXPIRED_TRANSACTION",
+      "Value": "27"
+    },
+    {
+      "Key": "PENDING_TRANSACTION_REVIEW",
+      "Value": "28"
+    },
+    {
+      "Key": "PENDING_TRANSACTION_TRANSMISSION",
+      "Value": "29"
+    },
+    {
+      "Key": "PAYMENT_NETWORK_BAD_RESPONSE",
+      "Value": "30"
+    },
+    {
+      "Key": "PAYMENT_NETWORK_NO_CONNECTION",
+      "Value": "31"
+    },
+    {
+      "Key": "PAYMENT_NETWORK_NO_RESPONSE",
+      "Value": "32"
+    },
+    {
+      "Key": "FIX_NOT_REQUIRED",
+      "Value": "33"
+    },
+    {
+      "Key": "AUTOMATICALLY_FIXED_AND_SUCCESS_REVERSAL",
+      "Value": "34"
+    },
+    {
+      "Key": "AUTOMATICALLY_FIXED_AND_UNSUCCESS_REVERSAL",
+      "Value": "35"
+    },
+    {
+      "Key": "AUTOMATIC_FIXED_NOT_SUPPORTED",
+      "Value": "36"
+    },
+    {
+      "Key": "NOT_FIXED_FOR_ERROR_STATE",
+      "Value": "37"
+    },
+    {
+      "Key": "ERROR_FIXING_AND_REVERSING",
+      "Value": "38"
+    },
+    {
+      "Key": "ERROR_FIXING_INCOMPLETE_DATA",
+      "Value": "39"
+    }
+  ]
+
+}

@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewData["Title"] = "EditAgency";
+}
+
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+
+        <!--page content-->
+        <main class="container-fluid">
+            <div class="container-fuid pt-2 pb-4">
+                <div class="row p-4">
+                    <div class="col">
+                        <div class="form-custom rounded-normal bg-purple-dark py-4 px-5">
+                            <div class="d-md-flex justify-content-between align-items-center">
+                                <h3 style="font-family:'BebasNeue'">Datos de la Agencia</h3>
+                                <button class="btn-block w-md-auto d-md-inline-block  ml-auto btn btn-orange btn-sm font-weight-bold rounded-default p-0 px-md-3">Eliminar Agencia</button>
+                            </div>
+
+                            <form class="py-3" action="" method="post">
+
+                                <div class="form-row">
+                                    <div class="form-group col-12 col-md">
+                                        <input class="form-control" placeholder="Razón Social" name="" type="text">
+                                    </div>
+                                    <div class="form-group col-12 col-md offset-md-1">
+                                        <input class="form-control" placeholder="Dirección legal" name="" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-12 col-md">
+                                        <input class="form-control" placeholder="Ruc" name="" type="text">
+                                    </div>
+                                    <div class="form-group col-12 col-md offset-md-1">
+                                        <div class="cursor-pointer custom-file">
+                                            <input type="file"  accept=".jpg,.jpeg,.png" class="cursor-pointer custom-file-input" id="inputfile">
+                                            <label class=" custom-file-label" for="inputfole" aria-describedby="inputGroupFileAddon02">Logo</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-row py-4">
+                                    <div class="col-12 col-md">
+                                        <h6 class="font-weight-bold">Representante legal:</h6>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Nombre y Apellido" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Email" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Teléfono" name="" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md offset-md-1">
+                                        <h6 class="font-weight-bold">Contacto para reserva:</h6>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Nombre y Apellido" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="E-mail" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Teléfono" name="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row py-3">
+                                    <div class="col-12 col-md">
+                                        <h6 class="font-weight-bold">Contacto para Contabilidad y cobranzas:</h6>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Nombre y Apellido" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="E-mail" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Teléfono" name="" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md offset-md-1">
+                                        <h6 class="font-weight-bold">Contacto Administrativo</h6>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Nombre y apellido" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="E-mail" name="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Teléfono" name="" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row py-2">
+                                    <div class="col-10 col-md-6">
+                                        <h6 class="font-weight-bold">Agregar Usuarios</h6>
+                                    </div>
+                                    <div class="col col-md-6 text-right">
+                                        <button role="button" type="button" class="btn btn-purple btn-sm rounded-circle py-0 px-1 shadow-sm "><ic class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-row align-items-center text-center">
+                                    <div class="form-group col-md">
+                                        <input class="form-control" placeholder="E-mail" name="" type="text">
+                                    </div>
+                                    <div class="col-10 col-md offset-md-1 form-group">
+                                        <input class="form-control" placeholder="Contraseña" name="" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <button role="button" type="button" class="btn btn-orange btn-sm rounded-circle shadow-sm "><ic class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="checkactive">
+                                    <label class="custom-control-label cursor-pointer" for="checkactive">Activo</label>
+                                </div>
+                            </form>
+                            <div class="text-center">
+                                <button type="button" role="button" class="mx-md-3 my-2 rounded-default btn btn-sm px-5 btn-purple font-weight-bold">Aceptar</button>
+                                <button type="button" role="button" class="mx-md-3 my-2 rounded-default btn btn-sm px-5 btn-orange font-weight-bold">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+        <!--end page content-->
+    </main>
+    <!--end page wrapper-->
+
+</div>
+

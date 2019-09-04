@@ -1,0 +1,27 @@
+﻿@using GoTourWeb.Helpers;
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+    string vName = "Error";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString(); 
+}
+
+
+<!-- error page 404 -->
+<div class="bg-page-error container-fluid">
+    <div class="row align-items-center justify-content-center min-vh-100">
+        <div class="col-md-5 text-center">
+            <h1 class="title-error text-orange">404</h1>
+            <p class="text-uppercase text-orange letter-spacing font-weight-bold">  @Language.GetTextView(vName, "sub_title", vLanguage)</p>
+            <div class="line text-left"></div>
+
+            <p class="px-md-5 pb-3">
+                @Language.GetTextView(vName, "text", vLanguage)
+            </p>
+
+
+            <a class="btn btn btn-outline-orange text-uppercase px-3 font-weight-bold" href="">@Language.GetTextView(vName, "back_button", vLanguage)</a>
+        </div>
+    </div>
+</div>
+

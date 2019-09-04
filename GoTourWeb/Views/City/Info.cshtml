@@ -1,0 +1,481 @@
+﻿@using GoTourWeb.Helpers;
+@model GoTourWeb.Models.CityViewModel
+@{
+    ViewData["Title"] = "Citys";
+    GoTourWeb.Models.MenuViewModel vItemsMenu = GoTourWeb.Startup._vDataMenu;
+    int vTotalCategories = 0;
+    
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+<div style="min-height: calc(100vh - 208.55px);">
+    @await Html.PartialAsync("_Header")
+    <!-- slider -->
+
+    <div class="background-header-city position-relative" style="background: url('@Model.UrlPhoto')">
+        <div class="container-fluid background-filter-city">
+            <div style="top: 0; bottom: 0; left: 0; right: 0; width: 90%; height: 30%;" class="position-absolute m-auto container text-white content-header">
+                <h2 class="pt-3 text-center">@Model.Name</h2>
+                @await Html.PartialAsync("_Search")
+            </div>
+        </div>
+    </div>
+    <!-- end slider -->
+    <!-- section 1-->
+    <div class="container section-1 py-4">
+        <div class="row py-4 justify-content-center">
+            <div class="col-12 col-md-8">
+                <h4 class="text-center">"@Model.Slogan"</h4>
+                <div class="line"></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- section 1 -->
+    <!-- section 2 -->
+    <div class="container-fluid section-2 bg-default pt-5 ">
+        <section id="tabs">
+            <div class="container">
+                <!--title tab-->
+                <nav>
+                    <div class="nav nav-tabs nav-fill mx-5" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-feature-tab" data-toggle="tab" href="#nav-feature" role="tab" aria-controls="nav-feature" aria-selected="true">
+                            <span id="QueHacer" class="active-opt"></span>                          
+                            <p class="py-2">@Language.GetTextView("City", "tab_title_1", vLanguage)</p>
+
+                        </a>
+                        <a class="nav-item nav-link" id="nav-tours-tab" data-toggle="tab" href="#nav-tours" role="tab" aria-controls="nav-tours" aria-selected="true">
+                            <span id="TourD"></span>
+                            <p class="py-2">@Language.GetTextView("City", "tab_title_2", vLanguage)</p>
+                        </a>
+
+                    </div>
+                </nav>
+                <!--end title tab-->
+                <!--content tab-->
+                <div class="tab-content py-5" id="nav-tabContent">
+                    <!--tab 1-->
+                    <div class="tab-pane fade show active" id="nav-feature" role="tabpanel" aria-labelledby="nav-feature-tab">
+                        <!-- feature's city -->
+                        <div class="features-city">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div>
+                                        <!-- description city -->
+                                        <p>
+                                            @Model.Description
+                                        </p>
+
+                                        <!-- /description city -->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- general -->
+                                    <div>
+                                        <span><b>@Language.GetTextView("City", "tab_1_items_title", vLanguage)</b></span>
+                                        <ul class="py-3 px-0">
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_1", vLanguage)</b> @Model.Location</li>
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_2", vLanguage)</b> @Model.Altitude @Language.GetTextView("City", "tab_1_item_6_1", vLanguage)</li>
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_3", vLanguage) </b>@Model.Temperature º C. </li>
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_4", vLanguage)</b> @Model.Population @Language.GetTextView("City", "tab_1_item_6_2", vLanguage)</li>
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_5", vLanguage) </b>@Model.FarmingProduction</li>
+                                            <li><b><i class="icon-color fas fa-caret-right"></i> @Language.GetTextView("City", "tab_1_item_6", vLanguage) </b>@Model.DescriptionDistricts</li>
+                                        </ul>
+                                    </div>
+                                    <!-- general -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /end feature's city -->
+                        <!-- popular -->
+                        <div class="popular-city py-5 px-3">
+                            <h4 class="text-center">@Language.GetTextView("City", "tab_1_subtitle", vLanguage)</h4>
+                            <div class="line"></div>
+                            <div class="row py-5">
+                                @{
+                                    List<TourViewModel> vListTourMostRanking = (List<TourViewModel>)ViewData["ListRankingTour"];
+                                    if(vListTourMostRanking != null && vListTourMostRanking.Count > 0) { 
+                                        foreach (var tour in vListTourMostRanking.Take(3)) {
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <img src="@tour.UrlPhoto" class="card-img-top" alt="img1">
+                                                    <div class="card-body text-center">
+                                                        <h6>@tour.Name</h6>
+                                                        <p>@tour.Description</p>
+                                                        <a href="#" class="btn" onclick="">&nbsp;@Language.GetTextView("City", "button_card_right", vLanguage)</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                     }
+                                }
+                                
+                            </div>
+                        </div>
+                        <!-- popular -->
+                    </div>
+                    <!--tab 2-->
+                    <div class="tab-pane fade" id="nav-tours" role="tabpanel" aria-labelledby="nav-tours-tab">
+                        <!-- tours -->
+                        <div class="tours">
+                            <div class="order-by text-right">
+                                <span>@Language.GetTextView("City", "tab_2_dropdown_title", vLanguage) </span>
+                                <div class="btn-group">
+                                    <button id="TextOrder" type="button" class="btn bg-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        @ViewData["DefaultTextOrderTours"]
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        @{
+                                            if (Model != null && Model.OrdersTours != null && Model.OrdersTours.Count > 0) {
+                                                foreach (var vItem in Model.OrdersTours) {
+                                                    <button class="dropdown-item" type="button" onclick="ChangeOrderingTour('@vItem.Id','@vItem.Name')">  @vItem.Name</button>
+                                                }
+                                            }
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <!-- filter -->
+                                <div class="col-12 col-md-3">
+                                    <div class="title-filter py-3 pl-4 mb-3">
+                                        <span><i class="icon-color fas fa-filter"></i> &nbsp;@Language.GetTextView("City", "filter_ttile", vLanguage)</span>
+                                    </div>
+
+                                    <div class="content-filter py-3">
+                                        <!--dropdown-->
+                                        <!-- Sidebar Links -->
+                                        <div class="sidebar">
+                                            <ul class="list-unstyled px-3 bg-white">
+                                                <li>
+                                                    <!-- Link with dropdown items -->
+                                                    
+                                                    <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@Language.GetTextView("City", "filter_1_title", vLanguage)</a>
+                                                    <ul class="collapse list-unstyled" id="submenu1">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" checked="checked" id="CheckAllCategories">
+                                                                <label class="custom-control-label" for="CheckAllCategories">@Language.GetTextView("City", "filter_1_a", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        @{
+                                                            if (vItemsMenu != null && vItemsMenu.Categories != null && vItemsMenu.Categories.Count() > 0) {
+                                                                vTotalCategories = vItemsMenu.Categories.Count;
+                                                                foreach (var vItem in vItemsMenu.Categories) {
+
+                                                                    <li>
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input check-categories" checked="checked" id="@vItem.Id" onclick="SearchTours(1)">
+                                                                            <label class="custom-control-label" for="@vItem.Id">@vItem.Name</label>
+                                                                        </div>
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        }
+
+
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+                                                    <!-- Link with dropdown items -->
+                                                    <a class="dropdown-toggle" href="#submenu2" data-toggle="collapse" aria-expanded="false">@Language.GetTextView("City", "filter_2_title", vLanguage)</a>
+                                                    <ul class="collapse list-unstyled" id="submenu2">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-prices" id="0-50" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="0-50">0 - 50</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-prices" id="50-100" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="50-100">50 - 100</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-prices" id="100-150" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="100-150">100 - 150</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-prices" id="150-300" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="150-300">150 - 300</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-prices" id="300-10000" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="300-10000">@Language.GetTextView("City", "filter_2_a", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+                                                    <!-- Link with dropdown items -->
+                                                    <a class="dropdown-toggle" href="#submenu3" data-toggle="collapse" aria-expanded="false">@Language.GetTextView("City", "filter_3_title", vLanguage)</a>
+                                                    <ul class="collapse list-unstyled" id="submenu3">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-duration" id="1-4" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="1-4">@Language.GetTextView("City", "filter_3_a", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-duration" id="4-24" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="4-24">@Language.GetTextView("City", "filter_3_b", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-duration" id="48-72" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="48-72">@Language.GetTextView("City", "filter_3_c", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-duration" id="72-50000" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="72-50000">@Language.GetTextView("City", "filter_3_d", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+
+
+                                                    </ul>
+
+                                                </li>
+                                                <li>
+                                                    <!-- Link with dropdown items -->
+                                                    <a class="dropdown-toggle" href="#submenu4" data-toggle="collapse" aria-expanded="false">@Language.GetTextView("City", "filter_4_title", vLanguage)</a>
+                                                    <ul class="collapse list-unstyled" id="submenu4">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-score" id="0-2" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="0-2">@Language.GetTextView("City", "filter_4_a", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-score" id="3-4" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="3-4">@Language.GetTextView("City", "filter_4_b", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input check-score" id="5-5" onclick="SearchTours(1)">
+                                                                <label class="custom-control-label" for="5-5">@Language.GetTextView("City", "filter_4_c", vLanguage)</label>
+                                                            </div>
+                                                        </li>
+
+
+
+                                                    </ul>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--end dropdown-->
+
+                                    </div>
+                                </div>
+                                <!-- /filter -->
+                                <!--general post -->
+
+                                <div id="divListTour" class="post col-12 col-md-9 pl-4">
+                                    @{
+                                        await Html.RenderPartialAsync("_TourList", Model);
+
+                                    }
+
+                                </div>
+                                <!-- post -->
+
+                            </div>
+
+                        </div>
+                        <!-- tours -->
+
+                    </div>
+                </div>
+
+
+                <!--end content tab-->
+
+            </div>
+        </section>
+    </div>
+</div>
+
+<!--end section 2-->
+@await Html.PartialAsync("_Footer")
+
+<script>
+
+    $(function () {
+        $("#tabs .nav-item").on("click", function () {
+            idThis = "#" + $(this).children("span").attr("id");
+            $("#tabs .nav-item span.active-opt").removeClass("active-opt");
+            $(idThis).addClass("active-opt");
+        });
+       
+    });
+
+   
+
+    
+     $("#CheckAllCategories").change(function () {
+        
+         if ($(this).prop("checked")) {
+             $(".check-categories").prop('checked', $(this).prop("checked"));
+             SearchTours(1);
+         } else {
+             $(this).prop('checked', false);
+             $(".check-categories").prop('checked', $(this).prop("checked"));
+             SearchTours(1);
+         }
+    });
+   
+    $(".check-categories").change(function () {
+        $(".check-categories").each(function () {
+           if (!$(this).prop("checked")) {
+                $("#CheckAllCategories").prop('checked', false);
+            }
+        });
+    });
+
+    function SearchTours(vPage) {
+        var chkArrayIdCategory = [];
+        var vTotalCategoriesChecked = 0;
+        $(".check-categories:checked").each(function () {
+            if($(this).attr('id')!='CheckAllCategories'){
+                chkArrayIdCategory.push($(this).attr('id'));
+                vTotalCategoriesChecked++
+            }
+        });
+        var vTotalCategories = '@vTotalCategories';
+        if (vTotalCategoriesChecked === parseInt(vTotalCategories)) { 
+            $("#CheckAllCategories").prop('checked', true);
+        }
+        var chkArrayPrices = [];
+        $(".check-prices:checked").each(function () {
+            chkArrayPrices.push($(this).attr('id'));
+        });
+        var chkArrayDuration = [];
+        $(".check-duration:checked").each(function () {
+            chkArrayDuration.push($(this).attr('id'));
+        });
+        var chkArrayScore = [];
+        $(".check-score:checked").each(function () {
+            chkArrayScore.push($(this).attr('id'));
+        });
+        var vParams = {
+            Categories: chkArrayIdCategory,
+            Prices: chkArrayPrices,
+            Durations: chkArrayDuration,
+            Ranking: chkArrayScore,
+            PageNumber: vPage
+        };
+
+        $.ajax({
+            url: "/City/SearchTours",
+            method: "POST",
+            data: vParams,
+            async: true,
+            success: function (response) {
+                $('#divListTour').html(response)
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+                $(".modaldisplay").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+    
+
+    function ChangeOrderingTour(vId, valName) {
+        var params = {
+            valId: vId
+        };
+        $.ajax({
+            url: "/City/ChangeOrdering",
+            method: "POST",
+            data: params,
+            dataType: 'json',
+            async: true,
+            success: function (response) {
+                if (response.content == 1) {
+                    $("#TextOrder").html(valName)
+                    SearchTours(1)
+
+                }
+
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+                $(".modaldisplay").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+
+
+        });
+    }
+
+    function SelectTour(valIdTour) {
+        var vModel = {
+            IdTour: valIdTour
+        };
+        $.ajax({
+            url: "/City/SelectTours",
+            method: "POST",
+            data: vModel,
+            async: true,
+            success: function (response) {
+                if (response.content == 'true') {
+                    window.location.href = '@Url.Action("Info", "Tours")';
+                    return;
+                }
+                window.location.href = '@Url.Action("Error", "Home")';
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+                $(".modaldisplay").hide();
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+   
+
+</script>

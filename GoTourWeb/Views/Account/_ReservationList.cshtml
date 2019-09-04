@@ -1,0 +1,156 @@
+﻿@using GoTourWeb.Helpers
+@model List<GoTourWeb.Models.PaymentViewModel>
+@{
+    ViewData["Title"] = "_ReservationList";
+    string vViewName = "MyReservation";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+<link rel="stylesheet" href="~/lib/rate/jquery.rateyo.min.css" />
+<script type="text/javascript" src="~/lib/rate/jquery.rateyo.js"></script>
+
+@{
+    if (Model != null && Model.Count > 0) {
+        foreach (PaymentViewModel vItem in Model) {
+            var vInputSelector = "input" + vItem.Id;
+            <div class="card my-3 rounded-0">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="~/images/15.jpg" class="card-img h-100" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-8 content-post">
+                        <div class="card-body">
+                            <div class="post-title d-lg-inline-block py-2">
+                                <h6 class="d-md-inline-block flex-grow-1 m-0"><b>@vItem.Name</b></h6>
+                             
+                            </div>
+                            @if (vItem.IsRankingForUser) {
+                            <div class="d-inline-block float-lg-right">
+                                @if (vItem.FreeCancelation == 1) {
+                                    <span class="font-weight-bold text-purple">@Language.GetTextView(vViewName, "post_info_text", vLanguage)</span>
+                                }
+                                <div id="@vItem.Id" class="rateYo-readonly" rankinvalue="@vItem.Ranking">
+                                </div>
+                                <div class="text-purple">@Language.GetTextView(vViewName, "r_text_qualify_user", vLanguage)</div>
+
+                            </div>
+                                
+                            } else {
+                                <div id="@vItem.Id" class="rateYo float-lg-right" idactivity="@vItem.IdActivity"></div>
+
+                            }
+                            <ul>
+                                <li> <i class="icon-color mr-1 fas fa-bullhorn"></i>@Language.GetTextView(vViewName, "post_item_1", vLanguage) @vItem.NameCompany</li>
+                                <li> <i class="icon-color mr-2 far fa-clock"></i>@Language.GetTextView(vViewName, "post_item_2", vLanguage) @vItem.Duration @Language.GetTextView(vViewName, "post_item_2_1", vLanguage)</li>
+                                <li> <i class="icon-color mr-1 fa fa-users"></i>@Language.GetTextView(vViewName, "post_item_3", vLanguage) @vItem.MinimumPeople @Language.GetTextView(vViewName, "post_item_3_1", vLanguage)</li>
+                                <li> <i class="icon-color mr-2 far fa-calendar-check"></i>@Language.GetTextView(vViewName, "post_item_4", vLanguage) @vItem.SellTimeAdvance @Language.GetTextView(vViewName, "post_item_4_1", vLanguage)</li>
+                                @if (vItem.State == 1) {
+                                    <li> <i class="text-success mr-1 fas fa-check-circle"></i>@Language.GetTextView(vViewName, "post_item_5", vLanguage) @Language.GetTextView(vViewName, "post_item_5_1", vLanguage)</li>
+                                } else {
+                                    <li> <i class="icon-color mr-1 fas fa-minus-circle"></i>@Language.GetTextView(vViewName, "post_item_5", vLanguage) @Language.GetTextView(vViewName, "post_item_5_2", vLanguage)</li>
+                                    <li> <i class="text-success mr-1 fas fa-check-circle"></i>@Language.GetTextView(vViewName, "post_item_6", vLanguage)  @Language.GetTextView(vViewName, "post_item_6_1", vLanguage) </li>
+
+                                }
+
+                            </ul>
+                            <div class="buttons-post text-right">
+                                @if (vItem.FreeCancelation == 1 && vItem.State == 1) {
+                                    <button asp-area="" onclick="CancelAndRefund('@vItem.Id', '@vItem.Name', '@vItem.GatewayJsonData', '@vItem.Email')" class="btn btn-orange d-block d-sm-inline-block my-1 my-md-0">@Language.GetTextView(vViewName, "r_post_button_1", vLanguage)</button>
+                                } else if (vItem.State == 1) {
+                                    <button asp-area="" onclick="Cancel('@vItem.Id', '@vItem.Name', '@vItem.GatewayJsonData', '@vItem.Email')" class="btn btn-orange d-block d-sm-inline-block my-1 my-md-0">@Language.GetTextView(vViewName, "r_post_button_1_1", vLanguage)</button>
+                                }
+                                <button class="btn btn-orange d-block d-sm-inline-block my-1 my-md-1" onclick="Details('@vItem.Id')">@Language.GetTextView(vViewName, "r_post_button_2", vLanguage)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+}
+
+@{
+    if (Model != null && Model.Count() > 0) {
+        int vPag = Convert.ToInt32(ViewData["RowsPerPage"]);
+        int vCurrent = Convert.ToInt32(ViewData["PageNumber"]);
+        <nav class="d-flex justify-content-end" aria-label="...">
+            <ul class="pagination">
+                @if (vCurrent > 1) {
+                    <li class="page-item">
+
+                        <label onclick="SearchReservation('@(vCurrent - 1)')" class="page-link"><span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+
+                    </li>
+                }
+                @for (int vItem = vCurrent; vItem <= vCurrent + 6; vItem++) {
+
+                    if (vItem == vCurrent) {
+                        <li class="page-item active">
+                            <label onclick="SearchReservation('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+
+                    } else if (vItem > vPag) {
+                        break;
+                    } else {
+                        <li class="page-item">
+                            <label onclick="SearchReservation('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+                    }
+
+                }
+                @if (vCurrent < vPag) {
+                    <li class="page-item">
+                        <label onclick="SearchReservation('@(vCurrent + 1)')" class="page-link"><span aria-hidden="true" class="cursor-hand">&gt;&gt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&gt;&gt;</span></label>
+                    </li>
+
+                }
+
+            </ul>
+        </nav>
+     }
+}
+
+
+<script>
+    $(document).ready(function() {
+        $(".rateYo").each(function (e) {
+            $(this).rateYo({
+                onSet: function (rating, rateYoInstance) {
+                    var vId = $(this).attr("id");
+                    var vIdActivity = $(this).attr("idactivity");
+                    var vRating = rating;
+                    SaveRanking(vId, vIdActivity, vRating);
+                },
+                rating: 0,
+                starWidth: "20px",
+                numStars: 5,
+                fullStar: true
+            });
+        });
+    
+        $(".rateYo-readonly").each(function (e) {
+            var vId = $(this).attr("id");
+            var vRating = parseInt($(this).attr("rankinvalue"));
+            $(this).rateYo({
+            
+                rating:  vRating,
+                starWidth: "20px",
+                numStars: 5,
+                fullStar: true,
+                readOnly: true
+            });
+        });
+   });
+       
+</script>
+

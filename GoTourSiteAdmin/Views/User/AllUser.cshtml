@@ -1,0 +1,276 @@
+﻿
+@{ ViewData["Title"] = "AllUser";
+}
+
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+        <!--Filter users-->
+        <div class="row bg-purple-light pt-3 pb-4 px-4 align-items-end">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="font-weight-bold">Filtro</h5>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-3">
+                <label class="font-weight-bold" for="">Ciuidad</label>
+                <select class="custom-select rounded">
+                    <option selected>Seleccione</option>
+                    <option value="1">Trujillo</option>
+                    <option value="2">Arequipa</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="font-weight-bold" for="">Nacionalidad</label>
+                <select class="custom-select rounded">
+                    <option selected>Seleccione</option>
+                    <option value="1">Argentina</option>
+                    <option value="2">Perú</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="font-weight-bold" for="">Seleccione</label>
+                <select class="custom-select rounded">
+                    <option selected>Trujillo</option>
+                    <option value="1">Otro</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="font-weight-bold" for="">Agencias</label>
+                <select class="custom-select rounded">
+                    <option selected>Todas</option>
+                    <option value="1">Go Tour</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="my-3 my-md-0 btn btn-block btn-sm btn-orange">Buscar</button>
+            </div>
+        </div>
+        <!--end filter users-->
+
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 pr-0">
+                    @Html.Partial("_TableUser")
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--end page wrapper-->
+
+</div>
+
+
+@section scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.custom-file input').change(function (e) {
+                $(this).next('.custom-file-label').html(e.target.files[0].name);
+            });
+            $('#TableUser').DataTable({
+                "language": {
+                    "url": "/lib/datatables/spanish.json"
+                },
+                "ajax": {
+                    "url": "@Url.Action("GetData", "User")",
+                    "type": "GET",
+                    "async":"true",
+                    "datatype": "json",
+                    "error": function (xhr) {
+                        console.log("Error");
+                    }
+                },
+                "columns": [
+                    { "data": 'userName' },
+                    { "data": 'firstName' },
+                    {
+                        "render": function (data, type, full) {
+                            return full["firstLastName"] + ' ' + full['secondLastName'];
+                        }
+                    },
+                    { "data": 'phone' },
+                    {
+                        "data": "urlPhoto",
+                        "render": function (data) {
+                            if (data != null && data!= "") {
+                                return '<img class="img-fluid" width="40" src="' + data + '" alt=""/>';
+                            } else {
+                                return null;
+                            }
+                        }
+                    },
+                    {
+                        "data": "state",
+                        "render": function (data, type, full) {
+                            if (data == 1) {
+                                return '<span class="badge badge-success">Activo</span>';
+                            }
+                            else {
+                                return '<span class="badge badge-danger">Inactivo</span>';
+                            }
+                        }
+                    },
+                    {
+                        "targets": 6,
+                        "data": 'id',
+                        "render": function (data, type, full) {
+                            var editButton = '<button class="btn btn-primary btn-sm" onclick="EditUser(this.id)" id=' + data + '><i class="fas fa-edit"></i></button>';
+                            if (full["state"] == 1) {
+                                return editButton + '<button onclick="ChangeState(this.id, '+ full["state"]+')" id=' + full["id"] +' type="button" class="btn btn-sm btn-danger mb-2"><i class="fas fa-minus-circle"></i></button>';
+                            }
+                            else {
+                                return '<button  onclick="ChangeState(this.id,'+ full["state"] +')" id='+ full["id"] +' type="button" class="btn btn-sm btn-success mb-2"><i class="fas fa-plus-circle"></i></button>';
+                            }
+                        }
+
+                    },
+                     {
+                        "targets": -1,
+                        "data": 'id',
+                         "render": function (data, type, full) {
+                             if (full["state"] == 1) {
+                                 return '<button class="btn btn-primary btn-sm" onclick="Details(this.id)" id=' + data + '><i class="fas fa-info-circle"></i></button>';
+                             }
+                             return null;
+                        }
+
+                    }
+                ],
+
+
+            });
+        });
+
+        function Edit() {
+            var vModel = {
+                Id: $("#Id").val(),
+                UserName: $("#UserName").val(),
+                FirstName: $("#FirstName").val(),
+                FirstLastName: $("#FirstLastName").val(),
+                Email: $("#Email").val(),
+                Phone: $("#Phone").val(),
+                UrlPhoto: "/images/" + $("#UrlPhoto").text()
+            };
+            $.ajax({
+               url: "/User/Edit",
+               method: "POST",
+               data: JSON.stringify(vModel),
+               contentType: "application/json",
+               async: true,
+                success: function (response) {
+                    Swal.fire(
+                        'Usuario Actualizado',
+                        '',
+                        'success'
+                    ).then(function () {
+                        $("#ContentView").html(response);
+                    });
+
+               },
+
+                    error: function (xhr) {
+                        console.log(xhr.status + ": " + xhr.responseText);
+                    }
+                    });
+
+        }
+
+
+        function EditUser(vId) {
+            $.ajax({
+                type: "POST",
+                url: "/User/GetDataUser",
+                Datatype: 'json',
+                async: true,
+                data: { valId: vId},
+                success: function (response) {
+                    if (response.content == "True") {
+                        window.location.href = '@Url.Action("Edit", "User")';
+                    } else if (response.content == "False") {
+                        window.location.href = '@Url.Action("Error", "Home")';
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+            });
+        }
+        function ChangeState(vId, vState) {
+            //if (vId == null || vState == null) {
+            //    return false;
+            //}
+            $.ajax({
+                type: "POST",
+                url: "/User/UpdateState",
+                data: { valId: vId, valState: vState },
+                DataType: "json",
+                async: true,
+                success: function (response) {
+                    if (response.content == "1" && vState =="1") {
+                        Swal.fire(
+                            'Usuario Desactivado',
+                            '',
+                            'success'
+                        ).then(function () {
+                            $('#TableUser').DataTable().ajax.reload(null, false);
+                           });
+                    } else if (response.content == "1" && vState == "2"){
+                        Swal.fire(
+                            'Usuario Activado',
+                            '',
+                            'success'
+                        ).then(function () {
+                            $('#TableUser').DataTable().ajax.reload(null, false);
+                        });
+                    } else if (response.content == "3" || response.content == "4" || response.content == "5") {
+                        Swal.fire(
+                            'No se puedo actualizar estado de usuario',
+                            '',
+                            'error'
+                        )
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+
+                }
+            });
+        }
+        function Details(Id) {
+           $.ajax({
+                type: "POST",
+                url: "/User/GetDataUser",
+                Datatype: 'json',
+                async: true,
+                data: { valId: Id},
+                success: function (response) {
+                    if (response.content == "True") {
+                        window.location.href = '@Url.Action("Detail", "User")';
+                    } else if (response.content == "False") {
+                        window.location.href = '@Url.Action("Error", "Home")';
+                    }
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+                }
+
+            });
+        }
+    </script>
+}

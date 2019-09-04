@@ -1,0 +1,19 @@
+﻿@model List<GoTourWeb.Models.GeneralResultViewModel>
+@{
+    ViewData["Title"] = "_SearchTour";
+}
+<ul>
+    @{
+        if (Model != null && Model.Count() > 0) {
+            foreach (var vItem in Model) {
+                if (vItem.Ordering == 2) {
+                    <li>
+                        <label onclick="SelectSearchTours('@vItem.IdCityTour','@vItem.IdCity','@vItem.NameCityTour')"><i class="@vItem.IconCityTour mr-3"></i>@vItem.NameCityTour</label>
+                    </li>
+                }
+
+            }
+        }
+    }
+
+</ul>

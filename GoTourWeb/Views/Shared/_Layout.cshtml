@@ -1,0 +1,106 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--other head elements-->
+    @Html.Partial("_Favicons")
+    <!--APPID google-->
+    <meta name="google-signin-client_id" content="581730450566-k57ksnmcq3k8qjf1e07342i5lhf2cb96.apps.googleusercontent.com">
+
+    <title>@ViewData["Title"] - GoTourWeb</title>
+    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="~/lib/datapicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+       
+       
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="~/lib/datapicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+
+    </environment>
+
+
+</head>
+<body>
+
+    <div class="modaldisplay" style="text-align: center; display: none; z-index: 2000 !important">
+        <div class="loader"></div>
+    </div>
+    @*<partial name="_CookieConsentPartial" />*@
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    
+    
+    @RenderBody()
+
+
+
+    <environment include="Development">
+
+
+        <!--popper-->
+        <script src="~/js/popper.js"></script>
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!--fontawesome-->
+        <script defer src="~/lib/fontawesome/all.min.js"></script>
+        <!--datepicker3 + languages -->
+        <script src="~/lib/datapicker/js/bootstrap-datepicker.min.js"></script>
+
+        <script src="~/lib/datapicker/locales/bootstrap-datepicker.es.min.js"></script>
+        <script src="~/lib/datapicker/locales/bootstrap-datepicker.pt.min.js"></script>
+        <!--cdn api google -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/sweetalert/sweetalert2.all.js"></script>
+
+        <!-- Include a polyfill for ES6 Promises for IE11 -->
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js?features=default"></script>
+
+
+    </environment>
+    <environment exclude="Development">
+        <!--popper-->
+        <script src="~/js/popper.js"></script>
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!--fontawesome-->
+        <script defer src="~/lib/fontawesome/all.min.js"></script>
+        <!--datepicker3 + languages -->
+        <script src="~/lib/datapicker/js/bootstrap-datepicker.min.js"></script>
+
+        <script src="~/lib/datapicker/locales/bootstrap-datepicker.es.min.js"></script>
+        <script src="~/lib/datapicker/locales/bootstrap-datepicker.pt.min.js"></script>
+        <!--cdn api google -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/sweetalert/sweetalert2.all.js"></script>
+
+        <!-- Include a polyfill for ES6 Promises for IE11 -->
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js?features=default"></script>
+    </environment>
+
+
+
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+﻿@model GoTourSiteAdmin.Models.UserViewModel
+
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 pr-0">
+                    <h3>Editar Usuario Web</h3>
+                    @if (Model != null) {
+                        <form method="post">
+                            <input type="text" class="d-none" name="Id" id="Id" value="@Model.Id" placeholder="Id" />
+                            <div class="form-group form-row">
+                                <div class="col-md-6">
+                                    <label for="UserName">Nombre de Usuario:</label>
+                                    <input type="text" class="form-control" name="UserName" id="UserName" value="@Model.UserName" placeholder="Usuario" readonly />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Password">Contraseña:</label>
+                                    <input type="text" class="form-control" name="Password" id="Password" value="@Model.Password" placeholder="Contraseña" />
+                                </div>
+                            </div>
+                            <div class="form-row form-group">
+                                <div class="col-md-6">
+                                    <label for="FirstName">Primer Nombre:</label>
+                                    <input type="text" class="form-control" name="FirstName" id="FirstName" value="@Model.FirstName" placeholder="Primer Nombre" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="SecondName">Segundo Nombre:</label>
+                                    <input type="text" class="form-control" name="SecondName" id="SecondName" value="@Model.SecondName" placeholder="Segundo Nombre" />
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <div class="col-md-4">
+                                    <label for="FirstLastName">Primer Apellido:</label>
+                                    <input type="text" class="form-control" name="FirstLastName" id="FirstLastName" value="@Model.FirstLastName" placeholder="Primer Apellido" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="SecondLastName">Segundo Apellido:</label>
+                                    <input type="text" class="form-control" name="SecondLastName" id="SecondLastName" value="@Model.SecondLastName" placeholder="Primer Apellido" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="Phone">Teléfono:</label>
+                                    <input type="text" name="Phone" class="form-control" id="Phone" value="@Model.Phone" placeholder="Teléfono" />
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button onclick="Edit()" type="button" class="btn btn-purple btn-sm px-5 mx-2 font-weight-bold rounded-default">Aceptar</button>
+                                <button type="button" class="btn btn-orange btn-sm px-5 mx-2 font-weight-bold rounded-default">Cancelar</button>
+                            </div>
+
+                        </form>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--end page wrapper-->
+
+</div>
+@section scripts{
+    <script>
+        function Edit() {
+            var vModel = {
+                Id: $("#Id").val(),
+                Password: $("#Password").val(),
+                FirstName: $("#FirstName").val(),
+                SecondName: $("#SecondName").val(),
+                FirstLastName: $("#FirstLastName").val(),
+                SecondLastName: $("#SecondLastName").val(),
+                Phone: $("#Phone").val()
+            }
+            $.ajax({
+                type: "POST",
+                url: "/User/UpdateUser",
+                data: JSON.stringify(vModel),
+                DataType: "json",
+                contentType: "application/json",
+                async: true,
+                success: function (response) {
+                    if (response.content == "1") {
+                        Swal.fire(
+                            'Usuario Actualizado',
+                            '',
+                            'success'
+                        ).then(function () {
+                            window.location.href = '@Url.Action("AllUser", "User")';
+                        });
+                    } else if (response.content == "3") {
+                        Swal.fire(
+                            'No se ha podido actualizar los datos correctamente',
+                            'Los campos con (*) son obligatorios',
+                            'error'
+                        )
+                    }
+                    else if (response.content == "4" || response.content == "5") {
+                        Swal.fire(
+                            'Ha ocurrido un error, no se puedo actualizar los datos correctamente',
+                            'Inténtelo de nuevo',
+                            'error'
+                        )
+                    }
+                }
+            });
+        }
+    </script>
+}

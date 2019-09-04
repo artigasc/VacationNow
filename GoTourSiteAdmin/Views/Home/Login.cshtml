@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<div style="" class="login-page container-fluid">
+    <div style="min-height: calc(100vh - 50px)" class="row justify-content-center align-items-center ">
+        <div class="col-12 col-md-4">
+            <img src="~/images/logologin.svg" class="img-fluid mx-auto d-block" width="300" alt="LogoGoTour" />
+            <!--login form-->
+           
+            <form class="p-4" action="/" method="post">
+                <div id="ErrorAlert"></div>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="email" class="form-control" id="UserName" name="UserName" maxlength="25" placeholder="usuario">
+                    <div class="help-error py-2"></div>
+
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-unlock-alt"></i>
+                    <input type="password" class="form-control" id="Password" name="Password" maxlength="15" placeholder="contraseña">
+                    <div class="help-error py-2"></div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="RememberMe">
+                        <label class="custom-control-label" for="RememberMe">Recuérdame</label>
+                    </div>
+                </div>
+
+                <button type="button" name="btnLogin" id="btnLogin" class="btn btn-block btn-purple font-weight-bold">Ingresar<span class="loader"></span></button>
+            </form>
+
+            <!--end login form-->
+        </div>
+
+    </div>
+</div>
+<footer class="bg-purple text-center text-white"><p class="py-3 mb-0">&copy; 2018 Go Tours. Todos los derechos reservados.</p></footer>
+
+    @section scripts {
+<script>
+    function validFileds() {
+        if ($('#Password').val() == "" && $('#UserName').val() == "") {
+            $(".help-error").html("<i class='far fa-times-circle'></i> Este campo es requerido!");
+            return false;
+        }
+     
+        $('input[type="email"], input[type="password"]').each(function () {
+            if ($(this).val() == "") {
+                $(this).siblings('.help-error').html("<i class='far fa-times-circle'></i> Este campo es requerido!");
+            }
+            else {
+                $(this).siblings('.help-error').html("");
+            }
+        });
+        emailRegex = /^[-\w.%+]{1,64}@@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+        if (!emailRegex.test($('#UserName').val().trim())) {
+            $("#UserName").siblings(".help-error").html("<i class='far fa-times-circle'></i> Ingrese un correo electrónico válido");
+            return false;
+        }
+        return true;
+    }
+    $(function () {
+      
+        $("#btnLogin").click(function () {
+            if (!validFileds()) {
+                return false;
+            }
+            var vModel = {
+                UserName: $('#UserName').val().trim(),
+                Password: $('#Password').val().trim()
+            };
+            $.ajax({
+                url: "/Home/Login",
+                method: "POST",
+                data: JSON.stringify(vModel),
+                dataType: "JSON",
+                contentType: 'application/json',
+                async: true,
+                success: function (response) {
+                    if (response.content == "2") {
+                        $("#ErrorAlert").html("<div class='alert alert-danger alert-dismissible fade show' role='alert'><strong><i class='fas fa-exclamation-circle'></i></strong> Datos incorrectos! Inténtelo otra vez. <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+                    }
+                    if (response.content == "1") {
+                        window.location.href = '@Url.Action("Dashboard", "Home")';
+                    }
+                },
+                beforeSend: function () {
+                    $("input").prop('readonly', true);
+                    $("#btnLogin").prop('disabled', true);
+                    $(".loader").addClass("d-inline-block");
+                },
+                complete: function () {
+                    $("input").prop('readonly', false);
+                    $("#btnLogin").prop('disabled', false);
+                    $(".loader").removeClass("d-inline-block");
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+
+                }
+            });
+        });
+    });
+    
+</script>
+}
+    
+   

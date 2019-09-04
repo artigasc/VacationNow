@@ -1,0 +1,252 @@
+﻿
+@{
+    ViewData["Title"] = "EditCity";
+}
+
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 px-md-5 px-3">
+
+                    <div id="ContentView">
+                        <!--AddCity Form-->
+                        <h3>Editar Ciudad</h3>
+                        <form id="FormCity" class="" action="/" method="post">
+                            <div id="wizard">
+                                <h1>Ciudad</h1>
+                                <fieldset class="p-2">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label class="font-weight-bold" for="Name">Nombre(*)</label>
+                                            <input class="form-control" id="Name" type="text" name="Name" placeholder="Nombre de la ciudad" value="" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="font-weight-bold" for="Icono">Icono (*)</label>
+                                            <select id="Icono" name="Icono" class="form-control">
+                                                <option value="">Elige un icono para la web</option>
+                                                <option value="fas fa-city">Icono Ciudad #0</option>
+                                                <option value="fas fa-building">Icono Ciudad #1</option>
+                                                <option value="far fa-building">Icono Ciudad #2</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label class="font-weight-bold" for="Temperature">Temperatura(*)</label>
+                                            <input class="form-control" id="Temperature" type="text" name="Temperature" placeholder="Temperatura" value="" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="font-weight-bold" for="Altitude">Altitud(*)</label>
+                                            <input class="form-control" id="Altitude" type="text" name="Altitude" placeholder="Altitud" value="" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="font-weight-bold" for="Population">Población(*)</label>
+                                            <input class="form-control" id="Population" type="text" name="Population" placeholder="Población" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="UrlPhoto">Imagen de la ciudad(*)</label>
+                                        <input type="file" name="UrlPhoto" id="UrlPhoto" value="" />
+                                    </div>
+                                </fieldset>
+                                <h1>Español</h1>
+                                <fieldset class="p-2">
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="SloganES">Eslogan(*)</label>
+                                        <input class="form-control data-slogan" id="SloganES" type="text" name="Slogan[0]" placeholder="slogan" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="DescriptionES">Descripción(*):</label>
+                                        <textarea class="form-control data-description" id="DescriptionES" name="Description[0]" rows="3" placeholder="Escriba una descripción..."></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="LocationES">Ubicación(*)</label>
+                                        <input class="form-control data-location" id="LocationES" type="text" name="Location[0]" placeholder="Ubicación" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="FarmingProductionES">Produccion agrícola:</label>
+                                        <textarea class="form-control data-farming-production" id="FarmingProductionES" name="FarmingProduction[0]" rows="3" placeholder="Describa la producción agrícola de la ciudad.."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="DescriptionDistrictsES">Distritos:</label>
+                                        <textarea class="form-control data-description-districts" id="DescriptionDistrictsES" name="DescriptionDistricts[0]" placeholder="Describa la cantidad de distritos de la ciudad..."></textarea>
+                                    </div>
+
+                                </fieldset>
+
+                                <h1>Inglés</h1>
+                                <fieldset class="p-2">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="SloganEN">Eslogan(*)</label>
+                                        <input class="form-control data-slogan" id="SloganEN" type="text" name="Slogan[1]" placeholder="slogan" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="DescriptionEN">Descripción(*):</label>
+                                        <textarea class="form-control data-description" id="DescriptionEN" name="Description[1]" rows="3" placeholder="Escriba una descripción..."></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="LocationEN">Ubicación(*)</label>
+                                        <input class="form-control data-location" id="LocationEN" type="text" name="Location[1]" placeholder="Ubicación" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="FarmingProductionEN">Produccion agrícola:</label>
+                                        <textarea class="form-control data-farming-production" id="FarmingProductionEN" name="FarmingProduction[1]" rows="3" placeholder="Describa la producción agrícola de la ciudad.."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="DescriptionDistrictsEN">Distritos:</label>
+                                        <textarea class="form-control data-description-districts" id="DescriptionDistrictsEN" name="DescriptionDistricts[1]" placeholder="Describa la cantidad de distritos de la ciudad..."></textarea>
+                                    </div>
+
+                                </fieldset>
+                                <h1>Portugués</h1>
+                                <fieldset class="p-2">
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="SloganPT">Eslogan(*)</label>
+                                        <input class="form-control data-slogan" id="SloganPT" type="text" name="Slogan[2]" placeholder="slogan" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="DescriptionPT">Descripción(*):</label>
+                                        <textarea class="form-control data-description" id="DescriptionPT" name="Description[2]" rows="3" placeholder="Escriba una descripción..."></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="LocationPT">Ubicación(*)</label>
+                                        <input class="form-control data-location" id="LocationPT" type="text" name="Location[2]" placeholder="Ubicación" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="FarmingProductionPT">Produccion agrícola:</label>
+                                        <textarea class="form-control data-farming-production" id="FarmingProductionPT" name="FarmingProduction[2]" rows="3" placeholder="Describa la producción agrícola de la ciudad.."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold" for="DescriptionDistrictsPT">Distritos:</label>
+                                        <textarea class="form-control data-description-districts" id="DescriptionDistrictsPT" name="DescriptionDistricts[2]" placeholder="Describa la cantidad de distritos de la ciudad..."></textarea>
+                                    </div>
+
+
+                                </fieldset>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+<!--end page wrapper-->
+@section scripts {
+    <script>
+
+        $(document).ready(function () {
+            var form = $("#FormCity");
+
+            $("#wizard").steps({
+                bodyTag: "fieldset",
+                transitionEffect: "fade",
+                //saveState: true,
+                onStepChanging: function (event, currentIndex, newIndex) {
+                    form.validate().settings.ignore = ":disabled,:hidden";
+                    return form.valid();
+                },
+
+                onFinishing: function (event, currentIndex) {
+                    form.validate().settings.ignore = ":disabled";
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex) {
+
+                    //$(this).steps("setStep", 0);
+
+                    var formData = new FormData();
+                    var TargetFile = $('#UrlPhoto')[0].files[0];
+
+                    formData.append("Name", $("#Name").val());
+                    formData.append("Icono", $("#Icono").val());
+                    formData.append("Temperature", $("#Temperature").val());
+                    formData.append("Altitude", $("#Altitude").val());
+                    formData.append("Population", $("#Population").val());
+                    if ($("#UrlPhoto")[0].files.length > 0) {
+                        formData.append("Photo", TargetFile, TargetFile.name);
+                    }
+                    var arrCityLanguage = ["IdLanguage", "data-slogan", "data-description", "data-location", "data-farming-production", "data-description-districts"];
+                    for (var i = 0; i < arrCityLanguage.length; i++) {
+                        $("." + arrCityLanguage[i]).each(function (index) {
+                            formData.append(arrCityLanguage[i] + index, $(this).val());
+                        });
+                    }
+
+                    for (var i = 0; i < $(".IdLanguage").length; i++) {
+                        formData.append($(".IdLanguage")[i].name, $('$(".IdLanguage")')[i].value);
+                    }
+                   for (var pair of formData.entries()) {
+                       console.log(pair[0] + ', ' + pair[1]);
+                    }
+                    $.ajax({
+                        url: "/City/Edit",
+                        type: "POST",
+                        data: formData,
+                        dataType: "json",
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                              if (response.content == "1") {
+                                    Swal.fire(
+                                        'Ciudad Actualizada',
+                                        '',
+                                        'success'
+                                    ).then(function () {
+                                        v.resetForm();
+                                        $("#wizard").steps("reset");
+                                        clearForm("FormCity");
+                                    });
+                              } else if (response.content == "2") {
+                                  Swal.fire(
+                                      'Se actualizaron sólo datos generes de la ciudad',
+                                      'Complete todos los campos de lenguaje.',
+                                      'warning'
+                                  )
+                              }
+                              else if (response.content == "3" || response.content == "4" || response.content =="6") {
+                                    Swal.fire(
+                                        'Ha ocurrido un error, no se puedo actualizar correctamente',
+                                        'Inténtelo de nuevo',
+                                        'error'
+                                )
+                            }
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.status + ": " + xhr.responseText);
+
+                        }
+
+                    });
+                }
+            });
+        });
+
+
+    </script>
+}

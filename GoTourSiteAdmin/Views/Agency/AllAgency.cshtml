@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewData["Title"] = "AllAgency";
+}
+
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+
+    <!--page wrapper-->
+    <main class="container-fluid">
+        <!--Filter users-->
+        <div class="row bg-purple-light pt-3 pb-4 px-4 align-items-end">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="font-weight-bold">Filtro</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <label class="font-weight-bold" for="">Ciuidad</label>
+                <select class="custom-select rounded">
+                    <option selected>Seleccione</option>
+                    <option value="1">Trujillo</option>
+                    <option value="2">Arequipa</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <label class="font-weight-bold" class="font-weight-blod" for="">Agencia</label>
+                <select class="custom-select rounded">
+                    <option selected>Todas</option>
+                    <option value="1">Go Tour</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3 col-md-2">
+                <button class="my-3 my-sm-0 my-md-0 btn btn-block btn-sm btn-orange">Buscar</button>
+            </div>
+        </div>
+        <!--end filter users-->
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="row p-md-4">
+                <div class="col">
+                    <div class="form-custom rounded-normal bg-purple-dark py-4 pl-5 pr-md-4 pr-0">
+                        <h2 style="font-family:'BebasNeue'">Todos las agencias</h2>
+                        <form class="py-3" action="" method="post">
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-7 col-sm-9 col-md-10">
+                                    <input type="text" class="form-control" placeholder="Nombre de la Agencia">
+                                </div>
+                                <div class="col col-sm-2 col-md-2">
+                                    <button type="button" class="btn text-large text-white"><i class="fas fa-eye"></i></button>
+                                    <button role="button" type="button" class="btn text-large text-white"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--end page wrapper-->
+
+</div>
+
+

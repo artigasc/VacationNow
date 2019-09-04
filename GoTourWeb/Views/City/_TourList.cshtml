@@ -1,0 +1,128 @@
+﻿@using GoTourWeb.Helpers
+@model GoTourWeb.Models.CityViewModel
+
+@{
+                string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+
+<div class="general-post-title py-2">
+    <h3>@Language.GetTextView("City", "tab_2_content_title", vLanguage) @Model.Name</h3>
+
+</div>
+
+<!-- post 1 -->
+@{
+    if (Model != null && Model.Tours != null && Model.Tours.Count() > 0) {
+        foreach (var vItem in Model.Tours) {
+            var vTarget = '#' + vItem.Name.Replace(" ","") + vItem.Id;
+            var vIdTarget = vItem.Name.Replace(" ", "") + vItem.Id;
+            <div class="row my-3 bg-white">
+                <div class="col-12 col-md-4 pl-md-0">
+                    <img src="@vItem.UrlPhoto" class="img-fluid" alt="">
+                </div>
+                <div class="content-post col-12 col-md-8 pt-5 px-4">
+                    <h6>@vItem.Name</h6>
+                    <p>@vItem.DescriptionShort</p>
+                    <div class="buttons-post py-2 text-right">
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn d-block d-md-inline-block mb-1 mb-md-0" data-toggle="modal" data-target="#exampleModal">
+                            <i class="mx-2 fas fa-plus small"></i>@Language.GetTextView("City", "tab_2_content_button_left", vLanguage)
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade bd-example-modal-lg" id="@vIdTarget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-justify">
+                                        <div class="" style="width: 100%; height: 200px;overflow:hidden">
+                                            <img src="@vItem.UrlPhoto" style="width:100%" alt="@vItem.UrlPhoto" />
+                                        </div>
+                                        <h3 class="text-center pt-3">@vItem.Name</h3>
+                                        <p class="text-justify">
+                                            @vItem.Description
+                                        </p>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="SelectTour('@vItem.Id')" class="btn mx-1">@Language.GetTextView("City", "tab_2_content_button_right", vLanguage)</button>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    } else {
+
+        @*<label> No se encontraron resultados</label>*@
+        <div class="alert alert-light" role="alert">
+            <strong><i class="fas fa-exclamation-circle"></i>&nbsp; No se encontraron resultados</strong> 
+         
+        </div>
+    }
+}
+
+
+@{
+    if (Model != null && Model.Tours != null && Model.Tours.Count() > 0) {
+        int vPag = Convert.ToInt32(ViewData["RowsPerPage"]);
+        int vCurrent = Convert.ToInt32(ViewData["PageNumber"]);
+        <nav class="d-flex justify-content-end" aria-label="...">
+            <ul class="pagination">
+                @if (vCurrent > 1) {
+                    <li class="page-item">
+
+                        <label onclick="SearchTours('@(vCurrent - 1)')" class="page-link">
+                            <span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&lt;&lt;</span></label>
+
+                    </li>
+                }
+                @for (int vItem = vCurrent; vItem <= vCurrent + 6; vItem++) {
+
+                    if (vItem == vCurrent) {
+                        <li class="page-item active">
+                            <label onclick="SearchTours('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+
+                    } else if (vItem > vPag) {
+                        break;
+                    } else {
+                        <li class="page-item">
+                            <label onclick="SearchTours('@vItem')" class="page-link cursor-hand">@vItem</label>
+                            &nbsp;
+                        </li>
+                    }
+
+                }
+                @if (vCurrent < vPag) {
+                    <li class="page-item">
+                        <label onclick="SearchTours('@(vCurrent + 1)')" class="page-link"><span class="cursor-hand" aria-hidden="true">&gt;&gt;</span></label>
+                    </li>
+                } else {
+                    <li class="page-item">
+                        <label class="page-link"><span aria-hidden="true" class="cursor-hand">&gt;&gt;</span></label>
+                    </li>
+
+                }
+
+            </ul>
+        </nav>
+
+    }
+}
+
+

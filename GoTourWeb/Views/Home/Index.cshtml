@@ -1,0 +1,49 @@
+﻿@using GoTourWeb.Helpers
+@{
+    ViewData["Title"] = "Index";
+    string vLanguage= ViewData["LanguageInitialDefault"].ToString();
+}
+@await Html.PartialAsync("_Header")
+
+<div class="container-fluid background-header position-relative">
+    <div style="top: 0; bottom: 0; left: 0; right: 0; width: 90%; height: 30%;" class="position-absolute m-auto container text-white content-header">
+        <h1 class="text-center"> @Language.GetTextView("Index", "title_header", vLanguage)</h1>
+        <p class="d-none d-sm-block text-center">@Language.GetTextView("Index", "subtitle_header", vLanguage)</p>
+        @await Html.PartialAsync("_Search")
+    </div>
+</div>
+
+<div class="principal-section container-fluid bg-default">
+ 
+    <div class="title-section pt-5">
+        <h2 class="text-center"> @Language.GetTextView("Index", "title_section", vLanguage)</h2>
+    </div>
+    <div class="container py-4">
+        <div class="row">
+            @{
+                List<TourViewModel> vListTourMostRanking = (List<TourViewModel>)ViewData["ListRankingTour"];
+                if(vListTourMostRanking != null && vListTourMostRanking.Count > 0) {
+                    foreach(TourViewModel vItem in vListTourMostRanking.Take(3)){
+                        <div class="col-md-4 mb-5">
+                            <div class="card">
+                                <img  style="" class="card-img-top" src="@vItem.UrlPhoto" alt="">
+                                <div class="card-body text-center">
+                                    <h6>@vItem.Name</h6>
+                                    <p>@vItem.Description</p>
+                                    <a href="#" class="btn">@Language.GetTextView("Index", "button_card_right", vLanguage)</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+             }
+            
+        </div>
+
+    </div>
+</div>
+
+
+@await Html.PartialAsync("_Footer")
+
+

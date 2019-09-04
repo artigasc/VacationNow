@@ -1,0 +1,168 @@
+﻿@using GoTourWeb.Helpers
+@model GoTourWeb.Models.TourViewModel
+@{
+    ViewData["Title"] = "Tour";
+    string vName = "Tour";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+}
+
+
+<div style="min-height: calc(100vh - 208.55px)">
+
+    @await Html.PartialAsync("_Header")
+    <!-- slider -->
+    <div class="background-header-tour position-relative" style="background: url('@Model.UrlPhoto');">
+        <div class="background-filter container-fluid">
+            <div style="top: 0; bottom: 0; left: 0; right: 0; width: 90%; height: 30%;" class="position-absolute m-auto container text-white  content-header">
+                <h2 class="pt-3 text-center">@Model.Name</h2>
+                @await Html.PartialAsync("_Search")
+            </div>
+        </div>
+    </div>
+    <!-- end slider -->
+    <!-- section -->
+    <div class="container-fluid section-2 py-5 bg-default">
+        <div class="mx-md-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <!--filter tours-->
+                    <div class="filter-tour">
+                        <form>
+                            <div class="form-group">
+                                <label>@Language.GetTextView(vName, "filter_tour_label1", vLanguage) </label>
+                                <div id="datepicker">
+                                    <div class="input-group date">
+                                        <input id="ActivityDateFilter"  type="text" class="form-control" value="" maxlength="10">
+                                        <div class="input-group-addon input-group-append">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group ">
+                                <label>@Language.GetTextView(vName, "filter_tour_label2", vLanguage) </label>
+                                <div class="input-group date">
+                                    <input id="PersonsQuantityFilter" type="text" class="form-control" maxlength="2" onkeypress='validateMinimunPersons(event)'>
+                                    <div class="input-group-addon input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-users"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" onclick="SearchTours(1)" class="btn">@Language.GetTextView(vName, "button_search", vLanguage)</button>
+                        </form>
+                    </div>
+                    <!--end filter tours-->
+
+                </div>
+                <div class="col-md-9">
+                    <!-- tours-->
+                    <div class="container content-tour" id="DivListActivities">
+                        @{
+                            await Html.RenderPartialAsync("_ActivityList", Model);
+
+                        }
+
+                    </div>
+                    <!--end  tours-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--section -->
+</div>
+
+
+@await Html.PartialAsync("_Footer")
+
+<script>
+    $(document).ready(function () {
+
+        $(function () {
+
+            $('#datepicker .input-group.date').datepicker({
+                startView: 0,
+                todayHighlight: true,
+                format: "dd/mm/yyyy",
+                language: "@vLanguage"
+            });
+        });
+    });
+
+    $('#ActivityDateFilter').on('input', function () {
+        this.value = this.value.replace(/[^0-9/]/g, '');
+    });
+
+    function validateMinimunPersons(evt) {
+        var theEvent = evt || window.event;
+
+        // Handle paste
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            // Handle key press
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }
+    function SearchTours(vPage) {
+        var vParams = {
+            DateStartString: $('#ActivityDateFilter').val().trim(),
+            MinimumPeople: $('#PersonsQuantityFilter').val().trim() == '' ? 0 : $('#PersonsQuantityFilter').val().trim(),
+            PageNumber: vPage
+        };
+        $.ajax({
+            url: "/Tours/SearchActivity",
+            method: "POST",
+            data: vParams,
+            async: false,
+            success: function (response) {
+                $('#DivListActivities').html(response);
+                return;
+            },
+            beforeSend: function () {
+                $("body").fadeIn(function () {
+                    $(".modaldisplay").show();
+                });
+            },
+            complete: function () {
+
+                $(".modaldisplay").hide();
+
+            },
+            error: function (xhr) {
+                console.log(xhr.status + ": " + xhr.responseText);
+
+            }
+        });
+    }
+
+    function PassToCheckOut(valIdTour) {
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        $.ajax({
+            url: '/Reserve/SelectActivity',
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            data: {
+                __RequestVerificationToken: token,
+                valIdTour: valIdTour
+            },
+            success: function (response) {
+                 if (response.content == 'true') {
+                    window.location.href = '@Url.Action("CheckOut", "Reserve")';
+                    return;
+                }
+                window.location.href = '@Url.Action("Error", "Home")';
+            }
+        });
+    }
+
+    
+</script>

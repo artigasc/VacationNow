@@ -1,0 +1,1216 @@
+﻿{
+  "Messages": [
+    {
+      "NameView": "Register",
+      "Content": [
+        {
+          "ValueResponse": "1",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Registro Exitoso" },
+                { "Text": "Sus datos han sido enviados al correo electrónico proporcionado. Ahora puedes ingresar con tu email y contraseña" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Successful registration" },
+                { "Text": "Your data has been sent to the email provided. Now you can enter with your email and password" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Registro bem sucedido" },
+                { "Text": "Seus dados foram enviados para o email fornecido. Agora pode entrar com seu email e senha." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "2",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Datos Incorrectos" },
+                { "Text": "Algunos datos básicos no han sido proporcionados" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Incorrect data" },
+                { "Text": "Some basic data have not been provided" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Dados incorretos" },
+                { "Text": "Alguns dados básicos não foram fornecidos." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "3",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "El email ya se encuentra registrado " },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "That email address is already in use" },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Este endereço de email já está sendo usado" },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "4",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "¿Estas seguro?" },
+                { "Text": "" },
+                { "SecondTitle": "Sí" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Are you sure?" },
+                { "Text": "" },
+                { "SecondTitle": "Yes" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Tem certeza?" },
+                { "Text": "" },
+                { "SecondTitle": "Sim" },
+                { "SecondText": "Ñao" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "5",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su sesión ha sido cerrada" },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your session has been closed" },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Sua sessão foi encerrada" },
+                { "Text": "" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        }
+
+
+      ]
+
+
+    },
+    {
+      "NameView": "CheckOut",
+      "Content": [
+        {
+          "ValueResponse": "1",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Usted no se encuentra autenticado. Debe loguearse para continuar" },
+                { "Text": "Los datos de su pedido no se perder&aacute;n" },
+                { "SecondTitle": "Ir al Login" },
+                { "SecondText": "Continuar aquí" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "You are not authenticated. You must log in to continue" },
+                { "Text": "The data of your order will not be lost" },
+                { "SecondTitle": "Go to Login" },
+                { "SecondText": "Stay here" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Você não está autenticado. Você deve fazer login para continuar" },
+                { "Text": "Os dados do seu pedido não serão perdidos." },
+                { "SecondTitle": "Ir para o login" },
+                { "SecondText": "Segue aqui" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "2",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Por favor intente nuevamente" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "Please retry" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Por favor, tente novamente." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "5",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Se ha generado un error desconocido" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "An unknown error has been generate. Call us!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Um erro desconhecido foi gerado. Ligue para nós!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "6",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción fue rechazada por el sistema anti-fraude. Llámenos!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction was rejected by the anti-fraud system. Call us!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação foi rejeitada pelo sistema antifraude. Ligue para nós!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "7",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La red financiera rechazó la transacción. Llámenos!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The financial network rejected the transaction. Call us!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A rede financeira rejeitou a transação. Ligue para nós!" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "8",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción fue declinada por el banco o por la red financiera debido a un error." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction was declined by the bank or by the financial network due to an error." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação foi recusada pelo banco ou pela rede financeira devido a um erro." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "9",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Ocurrió un error en el sistema intentando procesar el pago." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "An error occurred in the system trying to process the payment." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Ocorreu um erro no sistema tentando processar o pagamento." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "10",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "El proveedor de pagos no se encontraba activo." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The payment provider was not active." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O provedor de pagamento não estava ativo." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "11",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La red financiera reportó un error en la autenticación." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The financial network reported an authentication error." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A rede financeira relatou um erro de autenticação." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "12",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "El código de seguridad o la fecha de expiración estaba inválido." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The security code or the expiration date was invalid." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O código de segurança ou a data de expiração era inválido." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "13",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Tipo de respuesta no válida. La entidad aprobó parcialmente la transacción y debe ser cancelada automáticamente por el sistema." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "Invalid response type The entity partially approved the transaction and must be automatically canceled by the system." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Tipo de resposta inválido A entidade aprovou parcialmente a transação e deve ser automaticamente cancelada pelo sistema." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "14",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La cuenta no tenía fondos suficientes." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The account did not have sufficient funds." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A conta não tinha fundos suficientes." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "15",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La tarjeta de crédito no estaba autorizada para transacciones por Internet." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The credit card was not authorized for online transactions." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O cartão de crédito não foi autorizado para transações on-line." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "16",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La red financiera reportó que la transacción fue inválida." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The financial network reported that the transaction was invalid." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A rede financeira informou que a transação era inválida." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "17",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La tarjeta es inválida." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The card is invalid." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O cartão é inválido." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "18",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La tarjeta ya expiró." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The card is invalid." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O cartão é inválido." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "19",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La tarjeta presenta una restricción." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The card has a restriction." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O cartão tem uma restrição." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "20",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Debe contactar al banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "You must contact the bank." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Voce deve entrar em contato com o banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "21",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Se debe repetir la transacción." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction must be repeated." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação deve ser repetida." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "22",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La red financiera reportó un error de comunicaciones con el banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The financial network reported an error in communications with the bank." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A rede financeira relatou um erro nas comunicações com o banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "23",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "El banco no se encontraba disponible." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The bank was not available." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "O banco não estava disponível." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "24",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción excede un monto establecido por el banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction exceeds an amount established by the bank." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação excede um valor estabelecido pelo banco." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "25",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción no fue aceptada por el banco por algún motivo." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction was not accepted by the bank for any reason." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação não foi aceita pelo banco por qualquer motivo." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "26",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "Ocurrió un error convirtiendo los montos a la moneda de pago." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "An error occurred converting the amounts to the payment currency." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "Ocorreu um erro ao converter os valores para a moeda de pagamento." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "27",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción expiró." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction expired." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação expirou." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "28",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción fue detenida y debe ser revisada, esto puede ocurrir por filtros de seguridad." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction was stopped and must be reviewed, this can occur through security filters." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação foi interrompida e deve ser revisada, isso pode ocorrer por meio de filtros de segurança." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "29",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La transacción está pendiente para ser transmitida a la red financiera." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The transaction is pending to be transmitted to the financial network." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A transação está pendente de ser transmitida para a rede financeira." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "30",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "No se pudo realizar la conexión con la red financiera." },
+                { "Text": "El mensaje retornado por la red financiera es inconsistente." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The message returned by the financial network is inconsistent." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "A conexão com a rede financeira não pôde ser feita." },
+                { "Text": "A mensagem retornada pela rede financeira é inconsistente." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "31",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "No se pudo realizar la conexión con la red financiera." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The connection to the financial network could not be made." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A conexão com a rede financeira não pôde ser feita." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "32",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "Su pago no ha podido registrarse" },
+                { "Text": "La red financiera no respondió." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "Your payment could not be registered" },
+                { "Text": "The financial network did not respond." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Seu pagamento não pôde ser registrado" },
+                { "Text": "A rede financeira não respondeu." },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        }
+
+      ]
+
+
+    },
+    {
+      "NameView": "MyReservation",
+      "Content": [
+        {
+          "ValueResponse": "1",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "¿Estas seguro que desea anular y pedir reembolso del Tour" },
+                { "Text": "" },
+                { "SecondTitle": "Sí" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "You are sure you want to cancel and request a refund of the Tour" },
+                { "Text": "" },
+                { "SecondTitle": "Yes" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "Tem certeza de que deseja anular e solicitar um reembolso do Tour" },
+                { "Text": "" },
+                { "SecondTitle": "Sim" },
+                { "SecondText": "Ñao" }
+              ]
+            }
+          ]
+        },
+        {
+          "ValueResponse": "2",
+          "LanguageContent": [
+            {
+              "Language": "es",
+              "ListText": [
+                { "Title": "El Tour ha sido cancelado exitósamente" },
+                { "Text": "Utilice la opcion 'Consultar Reembolso' o comuníquese con nosotros para mas detalles sobre la devolucion de su dinero" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            },
+            {
+              "Language": "en",
+              "ListText": [
+                { "Title": "The Tour has been canceled successfully" },
+                { "Text": "Use the option 'Check Refund' or contact us for more details about the return of your money" },
+                { "SecondTitle": "" },
+                { "SecondText": "No" }
+              ]
+            },
+            {
+              "Language": "po",
+              "ListText": [
+                { "Title": "O tour foi cancelado com sucesso" },
+                { "Text": "Use a opção 'Verifique o reembolso' ou entre em contato conosco para mais detalhes sobre o seu dinheiro de volta" },
+                { "SecondTitle": "" },
+                { "SecondText": "" }
+              ]
+            }
+          ]
+        }
+
+
+      ]
+
+
+    }
+  ]
+
+
+}

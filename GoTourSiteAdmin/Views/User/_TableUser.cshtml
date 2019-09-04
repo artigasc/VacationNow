@@ -1,0 +1,64 @@
+﻿@model List<GoTourSiteAdmin.Models.UserViewModel>
+    <h3 style="font-family:'BebasNeue'">Todos los usuarios</h3>
+
+    <table id="TableUser" class="table bg-white text-dark">
+        <thead>
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 15%;"></th>
+                <th scope="col" style="width: 15%;"></th>
+            </tr>
+        </thead>
+
+        @*<tbody>
+            @{
+
+                if (Model != null && Model.Count() > 0) {
+                    foreach (var vItem in Model) {
+                        <tr>
+                            <td>@Html.DisplayFor(m => vItem.UserName)</td>
+                            <td>@Html.DisplayFor(m => vItem.FirstName)</td>
+                            <td>@Html.DisplayFor(m => vItem.FirstLastName)</td>
+                            <td>@Html.DisplayFor(m => vItem.Email)</td>
+                            <td>@Html.DisplayFor(m => vItem.Phone)</td>
+                            <td><img class="img-fluid" width="55" src="@Html.DisplayFor(m => vItem.UrlPhoto)" alt="ImagenUsuario" /></td>
+                            <td class="text-center">
+                                @if (vItem.State == 2) {
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked disabled>
+                                        <label class="custom-control-label" for="customCheck1"></label>
+                                    </div>
+                                } else {
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" disabled>
+                                        <label class="custom-control-label" for="customCheck1"></label>
+                                    </div>
+                                }
+                            </td>
+
+
+
+
+                            <td>
+                                <button id="@Html.DisplayFor(m => vItem.Id)" onclick="btnEditUser(this.id)" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></button>
+                                <button id="@Html.DisplayFor(m => vItem.Id)" onclick="Delete(this.id)" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                            </td>
+
+                        </tr>
+                    }
+                } else {
+                    <tr class="text-center">
+                        <td colspan="8">No hay registros de Usuarios</td>
+                    </tr>
+                }
+
+            }
+
+        </tbody>*@
+    </table>
+  

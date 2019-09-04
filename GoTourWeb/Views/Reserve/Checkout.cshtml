@@ -1,0 +1,571 @@
+﻿@using GoTourWeb.Helpers
+@model GoTourWeb.Models.ActivityCompanyViewModel
+@{
+    ViewData["Title"] = "Checkout";
+
+    string vName = "Checkout";
+    string vLanguage = ViewData["LanguageInitialDefault"].ToString();
+    GoTourWeb.Models.UserViewModel UserSession = new GoTourWeb.Models.UserViewModel();
+    UserSession = Context.Session.Get<GoTourWeb.Models.UserViewModel>("UserSesion");
+    bool vExistSession = false;
+    if (UserSession != null) {
+        vExistSession = true;
+    }
+}
+
+    <div class="checkout-page">
+        <div class="icon-back">
+            <a asp-area="" asp-controller="Tours" asp-action="Info"><i style="" class="fas fa-caret-left"></i></a>
+        </div>
+        <div  style="min-height: calc(100vh - 208.55px)" class="container py-5">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="d-flex">
+                        <div class="flex-1"></div>
+
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img class=" img-fluid" src="~/images/logoregistro.svg" width="220" alt=""></a>
+                        
+                        <div class="flex-1">
+                            @{
+                                if (UserSession != null) {
+                                    <div class="dropdown">
+                                        <a class="btn btn-sm dropdown-toggle text-black-50" href="#" role="button" id="dropdownnav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img class="img-fluid rounded-circle" src="@UserSession.UrlPhoto" width="35" alt=""> <span class="mx-1">@UserSession.FirstName @UserSession.FirstLastName</span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownnav">
+                                            <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="MyReservation"><i class="far fa-building"></i> @Language.GetTextView("Index", "account_user_1", vLanguage) </a>
+                                            <div class="dropdown-divider"></div>
+                                            <a id="logout" class="dropdown-item" href="#"><i class="fas fa-power-off"></i>  @Language.GetTextView("Index", "account_user_2", vLanguage)</a>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                   
+       
+
+
+
+                    <hr />
+                    <!---description-->
+                    <div class="row py-3">
+                        <div class="col-md-12">
+                            <div class="description bg-white py-5 px-5">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h2>
+                                            @Model.Activity.Name
+                                            <span class="text-danger"> @ViewData["CurrencySymbolDefault"] @Model.Activity.Mount</span>
+                                        </h2>
+                                        <span>
+                                            @for (int i = 0; i < Model.Activity.Ranking; i++) {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                            @for (int i = Model.Activity.Ranking; i < 8; i++) {
+                                                <i class="far fa-star"></i>
+                                            }
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="btn-description text-right">
+
+                                            
+                                            @if (Model.Activity.FreeCancelation == 1) {
+                                                <span class="d-block d-md-inline-block m-1 m-md-0" href="#">@Language.GetTextView(vName, "post_info_text", vLanguage)</span>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-3">
+                                    <div class="col-md-5">
+                                        <ul>
+                                            <li> <i class="icon-color mr-1 fas fa-bullhorn"></i>@Language.GetTextView(vName, "post_item_1", vLanguage) @Model.Company.Name</li>
+                                            <li> <i class="icon-color mr-2 far fa-clock"></i>@Language.GetTextView(vName, "post_item_2", vLanguage) @Model.Activity.Duration @Language.GetTextView(vName, "post_item_2_1", vLanguage)</li>
+                                            <li> <i class="icon-color mr-1 fa fa-users"></i>@Language.GetTextView(vName, "post_item_3", vLanguage) @Model.Activity.MinimumPeople @Language.GetTextView(vName, "post_item_3_1", vLanguage)</li>
+                                            <li> <i class="icon-color mr-2 far fa-calendar-check"></i>@Language.GetTextView(vName, "post_item_4", vLanguage) @Model.Activity.SellTimeAdvance @Language.GetTextView(vName, "post_item_4_1", vLanguage)</li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-7">
+
+
+                                        <p>
+                                            @if (!string.IsNullOrEmpty(@Model.Activity.Description)) {
+                                                <i class="fas fa-circle mr-2"></i>
+                                                @Model.Activity.Description
+                                            }
+
+
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end description-->
+                    <!--porgress bar-->
+                    <div class="progressbar py-2">
+                        <div class="step-1 act">
+                            <span id="step1">1</span>
+                        </div>
+                        <div class="step-1">
+                            <span id="step2">2</span>
+                        </div>
+                        <div id="holi" class="step-1">
+                            <span id="step3">3</span>
+                        </div>
+                    </div>
+
+                    <!--end progress bar-->
+                    <div class="container">
+                        <form method="POST">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-4">
+                                    <fieldset class="form-checkout p-4 rounded bg-purple" disabled>
+
+                                        <h3>@Model.Company.Name</h3>
+                                        @if (ViewData["TypeDocumentList"] is List<SelectListItem>) {
+                                            <strong>@Html.DropDownList("TypeDocumentCompany", ViewData["TypeDocumentList"] as List<SelectListItem>, new { @class = "custom-select" })<br></strong>
+                                        }
+
+                                        <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"form_1_input_e",vLanguage)" name="name" value="@Model.Company.NumberDocument">
+                                        <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"form_1_input_f",vLanguage)" name="name" value="@Model.Company.Address">
+                                        <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"form_1_input_g",vLanguage)" name="name" value="@Model.Company.Phone @Model.Company.Movil">
+                                        <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"form_1_input_h",vLanguage)" name="name" value="@Model.Company.Email1 @Model.Company.Email2">
+                                        <input class="form-control" type="text" placeholder="@Language.GetTextView(vName,"form_1_input_i",vLanguage)" name="name" value="@Model.Company.Web">
+
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <fieldset class="form-checkout form-step p-4 rounded bg-purple field-payment first">
+                                        <h3>@Language.GetTextView(vName, "form_2_title", vLanguage)</h3>
+                                        @Html.TextBox("FirstName", UserSession?.FirstName, new { @maxlength = "30", @class = "form-control user-info", @placeholder = Language.GetTextView(vName, "form_2_input_a", vLanguage) })
+
+                                        @Html.TextBox("LastName", UserSession?.FirstLastName, new { @maxlength = "30", @class = "form-control user-info", @placeholder = Language.GetTextView(vName, "form_2_input_b", vLanguage) })
+
+                                        @if (ViewData["TypeDocumentPayment"] is List<SelectListItem>) {
+                                            <strong>@Html.DropDownList("TypeDocument", ViewData["TypeDocumentPayment"] as List<SelectListItem>, new { @class = "custom-select user-info" })<br></strong>
+                                        }
+                                        @*<input class="form-control user-info" type="text" placeholder="@Language.GetTextView(vName,"form_2_input_c",vLanguage)" name="NumberDocument" id="NumberDocument" maxlength="11" value="" />*@
+                                        @Html.TextBox("NumberDocument", UserSession?.NumberDocument, new { @maxlength = "11", @class = "form-control user-info info-number", @placeholder = Language.GetTextView(vName, "form_2_input_c", vLanguage) })
+
+                                        @*<input class="form-control user-info" type="text" placeholder="@Language.GetTextView(vName,"form_2_input_d",vLanguage)" name="Phone" id="Phone" value="" maxlength="10" />*@
+                                        @Html.TextBox("Phone", UserSession?.Phone, new { @maxlength = "10", @class = "form-control user-info info-number", @placeholder = Language.GetTextView(vName, "form_2_input_d", vLanguage) })
+
+                                        @Html.TextBox("Email", UserSession?.Email, new { @maxlength = "52", @class = "form-control user-info", @type = "email", @placeholder = Language.GetTextView(vName, "form_2_input_e", vLanguage) })
+
+                                        <hr />
+
+                                        <div class="form-group">
+                                            <label>@Language.GetTextView(vName, "form_2_label", vLanguage)</label>
+                                            <div id="datepicker">
+                                                <div class="input-group date">
+                                                   <input id="DateReserve" type="text" class="form-control user-info" placeholder="@Language.GetTextView(vName, "form_2_input_h", vLanguage)" value="" maxlength="10">
+                                                    <div class="input-group-addon input-group-append">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <input class="form-control user-info" type="number" name="Persons" id="Persons" min="1" max="99" maxlength="3" placeholder="@Language.GetTextView(vName,"form_2_input_g",vLanguage)" value="" />
+                                            <input class="form-control user-info" type="text" name="TotalMount" id="TotalMount" placeholder="@Language.GetTextView(vName,"form_2_input_f",vLanguage)" maxlength="10" disabled />
+                                        </div>
+
+
+
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <fieldset class="form-checkout second form-step p-4 rounded bg-purple field-payment">
+
+                                        <h3 class="text-center">@Language.GetTextView(vName, "form_3_title", vLanguage)</h3>
+                                        <div class=" pb-2">
+                                            <img src="~/images/visa.png" alt="Visa" />
+                                            <img src="~/images/mastercard.png" alt="Master" />
+                                            <img src="~/images/amex.png" alt="Amex" />
+                                            <img src="~/images/diners-club.png" alt="DinersClub" />
+                                        </div>
+                                        <input class="form-control info-number user-info" type="text" placeholder="@Language.GetTextView(vName,"form_3_input",vLanguage)" name="NumCard" id="NumCard" maxlength="16" value="" />
+                                        <div class="form-group">
+                                            <label class="text-left">@Language.GetTextView(vName, "form_3_label_a", vLanguage)</label>
+                                            <div class="form-row">
+                                                <div class="col-md-7">
+                                                    <select class="custom-select" id="Month" name="Month">
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
+                                                        <option value="5">05</option>
+                                                        <option value="6">06</option>
+                                                        <option value="7">07</option>
+                                                        <option value="8">08</option>
+                                                        <option value="9">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <select class="custom-select" id="Year" name="Year">
+                                                        <option value="2019">2019</option>
+                                                        <option value="2020">2020</option>
+                                                        <option value="2021">2021</option>
+                                                        <option value="2022">2022</option>
+                                                        <option value="2023">2023</option>
+                                                        <option value="2023">2024</option>
+                                                        <option value="2025">2025</option>
+                                                        <option value="2026">2026</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>@Language.GetTextView(vName, "form_3_label_b", vLanguage)</label>
+                                            <input type="text" class="form-control user-info info-number" name="SecurityCode" id="SecurityCode" maxlength="4" disabled>
+                                        </div>
+                                        <div id="errorAlert"></div>
+                                        @{
+                                            if (vExistSession) {
+                                                <button type="button" id="buttonCheckout" name="buttonCheckout" class="btn btn bg-orange my-3 text-center">@Language.GetTextView(vName, "form_3_button", vLanguage)</button>
+                                            }
+                                        }
+
+
+
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@await Html.PartialAsync("_Footer")
+
+<script>
+
+        $(document).ready(function () {
+            var date = new Date();
+            var DateFormart = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            $(function () {
+                $('#datepicker .input-group.date').datepicker({
+
+                    startView: 0,
+                    todayHighlight: true,
+                    format: "dd/mm/yyyy",
+                    autoclose: true,
+                    language: "@vLanguage",
+                    startDate: DateFormart
+                   
+
+                });
+        });
+        });
+   
+    $(".info-number").keypress(function (evt) {
+        var theEvent = evt || window.event;
+
+        
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+         
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+        }
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    }).on('input brur paste', function (e) {
+        $(this).val($(this).val().replace(/\D/g, ''));
+    });
+      
+    function validatefieldscontent() {
+        onlyletters = /^[a-zA-Z ]+$/;
+        onlyN = /^[0-9]+$/;
+        if ($(".user-info").val().trim() == "") {
+            $("#errorAlert").html("<p>@Language.GetTextView(vName, "error_1", vLanguage)</p>");
+            return false;
+        }
+        if ($("#FirstName").val().trim() == "" || !onlyletters.test($("#FirstName").val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_2", vLanguage)</p>");
+            return false;
+        }
+        if ($("#FirstName").val().trim().length < 3) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_3", vLanguage)</p>");
+            return false;
+        }
+        if ($("#LastName").val().trim() == "" || !onlyletters.test($('#LastName').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_4", vLanguage)</p>");
+            return false;
+        }
+
+        if ($("#LastName").val().trim().length < 3) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_5", vLanguage)</p>");
+            return false;
+        }
+
+        if ($('#NumberDocument').val().trim() == "" || $("#NumberDocument").val().trim().length < 8 || !onlyN.test($('#NumberDocument').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_6", vLanguage)</p>");
+            return false;
+        }
+        
+
+        if ($('#Phone').val() == "" || $("#Phone").val().length < 8 || !onlyN.test($('#Phone').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_7", vLanguage)</p>");
+            return false;
+        }
+
+        emailRegex = /^[-\w.%+]{1,64}@@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+        if ($("#Email").val().trim() == "" || !emailRegex.test($('#Email').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_8", vLanguage)</p>");
+            return false;
+        }
+        if ($("#DateReserve").val().trim() == "") {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_12", vLanguage)</p>");
+            return false;
+        }
+       
+        if ($("#Persons").val().trim() == "" || $("#Persons").val().trim().length < 1 || $("#Persons").val().trim().length > 3 || !onlyN.test($('#Persons').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_9", vLanguage)</p>");
+            return false;
+        }
+        if ($("#NumCard").val() == "" || $("#NumCard").val().length < 16  || $("#NumCard").val().length > 16 || !onlyN.test($('#NumCard').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_10", vLanguage)</p>");
+            return false;
+        }
+        if ($("#SecurityCode").val().trim() == "" || $("#SecurityCode").val().trim().length < 3 || $("#SecurityCode").val().trim().length > 4 || !onlyN.test($('#SecurityCode').val().trim())) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_11", vLanguage)</p>");
+            return false;
+        }
+        if (!DateReserveOutOfRangeAnticipated()) {
+            $('#errorAlert').html("<p>@Language.GetTextView(vName, "error_13", vLanguage)</p>");
+            return false;
+        }
+        return true;
+    }
+
+    $('#TypeDocument').on('change', function () {
+        $('#NumberDocument').val("");
+        if ($('#TypeDocument').val() == "1") {
+            $('#NumberDocument').attr('maxlength', '8');
+        } else {
+            $('#NumberDocument').attr('maxlength', '11');
+        }
+    });
+
+    $('#NumCard').on('change', function () {
+        var vCardType = $(this).val().substr(0,2);
+        if (vCardType == "37" || vCardType=="34") {
+            $("#SecurityCode").attr('maxlength', '4');
+            $("#SecurityCode").removeAttr('disabled');
+            $("#SecurityCode").val("");
+        } else {
+            $("#SecurityCode").attr('maxlength', '3');
+            $("#SecurityCode").removeAttr('disabled');
+            $("#SecurityCode").val("");
+        }
+        
+    });
+
+    $(function () {
+        $("#buttonCheckout").click(function () {
+            //input invalid
+            $('.form-step input[type="text"], .form-step input[type="email"], .form-step input[type="number"]').on('focus', function () {
+                $(this).removeClass('invalid');
+            });
+
+            $('.form-step input[type="text"], input[type="email"],input[type="number"]').each(function() {
+                if ($(this).val() == "") {
+                    $(this).addClass('invalid');
+                }
+                else {
+                    $(this).removeClass('invalid');
+                }
+            });
+            
+            if (!validatefieldscontent()) {
+                return false;
+            }
+            var vPartsDate = $("#DateReserve").val().trim().split('/');
+             
+            var vParams = {
+                IdActivity: '@Model.Activity.Id',
+                FirstName: $("#FirstName").val().trim(),
+                LastName: $("#LastName").val().trim(),
+                TypeNumberDocument: $("#TypeDocument").val(),
+                NumberDocument: $("#NumberDocument").val().trim(),
+                Phone: $("#Phone").val().trim(),
+                Email: $("#Email").val().trim(),
+                Persons: parseInt($("#Persons").val()), 
+                Mount: parseFloat($("#TotalMount").val()),
+                CardNumber: $("#NumCard").val().trim(),
+                Month: $("#Month option:selected").text().trim(),
+                Year: $("#Year").val().trim(),
+                SecurityCode: $("#SecurityCode").val().trim(),
+                NameCompany: '@Model.Company.Name',
+                Name:'@Model.Activity.Name',
+                EmailCompany1:'@Model.Company.Email1',
+                EmailCompany2: '@Model.Company.Email2',
+                DayReserve: vPartsDate[0],
+                MonthReserve: vPartsDate[1],
+                YearReserve:vPartsDate[2]
+
+            };
+  
+            $.ajax({
+                url: "/Reserve/ProceedToPayment",
+                method: "POST",
+                data: JSON.stringify(vParams),
+                dataType: "JSON",
+                contentType: 'application/json',
+                async: true,
+                success: function (response) {
+                    if (response.content == 1) {
+                       
+                         window.location.href = '@Url.Action("Confirmation","Reserve")';
+                         
+                    }
+                    else {
+                       Swal({
+                            type: 'error',
+                            title: response.title,
+                            text: response.text
+                       });
+                    }
+                },
+                beforeSend: function () {
+                    $("body").fadeIn(function () {
+                        $(".modaldisplay").show();
+                    });
+                },
+                complete: function () {
+                    $(".modaldisplay").hide();
+                },
+                error: function (xhr) {
+                    console.log(xhr.status + ": " + xhr.responseText);
+
+                }
+
+            })
+            return true;
+        })
+    });
+
+    
+    $('.field-payment').click(function () {
+       var vIsLogged = '@vExistSession';
+        
+        if (vIsLogged == 'False') {
+            Swal({
+                title: '@Html.Raw(Language.GetMessageIn("CheckOut", "1", vLanguage, "Title"))',
+                html: "@Html.Raw(Language.GetMessageIn("CheckOut", "1", vLanguage, "Text"))",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: "@Html.Raw(Language.GetMessageIn("CheckOut", "1", vLanguage, "SecondTitle"))",
+                cancelButtonText: "@Html.Raw(Language.GetMessageIn("CheckOut", "1", vLanguage, "SecondText"))",
+
+            }).then(function (result) {
+                if (result.value) {
+                    window.location = '@Url.Action("Login", "Account", new { vReturnUrl = "pay"})';
+                }
+            });
+        } else if (vIsLogged == 'True') { 
+            progressbar();
+            if ($(this).hasClass('first')) {
+                $("#step2").trigger("click");
+            }
+            
+            $('.field-payment.second').click(function () {
+                if ($(".first .user-info").val().trim() != "") {
+                    $("#step3").trigger("click");
+                }                  
+            });
+       
+        }
+    })
+    
+    $('#Persons').on('change keyup paste', function () {
+        var vMountActivity = parseFloat('@Model.Activity.Mount')
+        var vTotalMount = 0;
+      
+        if ($('#Persons').val() != undefined && $('#Persons').val().trim().length > 0) {
+            vTotalMount = parseInt($('#Persons').val()) * vMountActivity;
+        }
+        $('#TotalMount').val(vTotalMount);
+    });
+
+      $(function () {
+
+        $('#logout').click(function () {
+            Swal({
+                title:  '@Language.GetMessageIn("Register", "4", vLanguage, "Title")',
+                text: "",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '@Language.GetMessageIn("Register", "4", vLanguage, "SecondTitle")',
+                cancelButtonText: '@Language.GetMessageIn("Register", "4", vLanguage, "SecondText")',
+
+            }).then(function (result) {
+                if (result.value) {
+                    $.ajax({
+                        url: "/Account/Logout",
+                        method: "POST",
+                        success: function (response) {
+                            if (response.content = "Ok") {
+                                Swal(
+                                    '@Language.GetMessageIn("Register", "5", vLanguage, "Title")',
+                                    "",
+
+                                    'success'
+                                ).then(function () {
+                                    window.location = '@Url.Action("CheckOut", "Reserve")';
+                                })
+
+                            }
+                        }
+                    })
+
+
+                }
+            });
+
+        })
+      });
+    $('.user-info').on('change', function () {
+        $('#errorAlert').html(""); 
+    });
+    function DateReserveOutOfRangeAnticipated() {
+        var vPartsDateReserve = $("#DateReserve").val().trim().split('/');
+        var vSellTime = '@Model.Activity.SellTimeAdvance';
+        var vFullDateNow = new Date();
+        var vDateReserve = new Date(vPartsDateReserve[2]+"-"+vPartsDateReserve[1]+"-"+vPartsDateReserve[0]).getTime();
+        var vDateNow = new Date(vFullDateNow.getFullYear()+ "-" + (vFullDateNow.getMonth() +1) + "-" +vFullDateNow.getDate()).getTime();
+        console.log(vDateReserve);
+        console.log(vDateNow);
+        var vDiffDate = vDateReserve - vDateNow;
+        var vDiffDateInMinutes= vDiffDate / (1000 * 60 * 60);
+        if (vDiffDateInMinutes >= vSellTime) {
+            return true;
+        }
+        $("#DateReserve").addClass('invalid');
+        return false;
+    }
+</script>

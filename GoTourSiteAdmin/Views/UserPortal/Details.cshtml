@@ -1,0 +1,86 @@
+﻿@model GoTourSiteAdmin.Models.UserPortalViewModelResponse
+@{
+    ViewData["Title"] = "Details";
+}
+<!--navbar-->
+@{
+    await Html.RenderPartialAsync("_Navbar");
+}
+<!--end navbar-->
+<div class="wrapper">
+    <!--sidebar-->
+    @{
+        await Html.RenderPartialAsync("_Sidebar");
+    }
+    <!--end sidebar-->
+    <!--page wrapper-->
+    <main class="container-fluid">
+
+        <div class="container-fuid pt-2 pb-4">
+            <div class="p-md-4">
+                <div class="form-custom rounded-normal bg-purple-dark py-4 p-4 px-md-5 px-3">
+
+                    <!--Detail Form-->
+                    <h3>Detalle de Usuario</h3>
+                    @if (Model != null) {
+                        <fieldset disabled>
+                            <input type="text" class="d-none" name="Id" id="Id" value="@Model.Id" placeholder="Id" />
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Nombre de Usuario (*):</label>
+                                    <input type="text" class="form-control" name="UserName" id="UserName" value="@Model.UserName" placeholder="Usuario" readonly />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Contraseña (*):</label>
+                                    <input type="text" class="form-control" name="Password" id="Password" value="@Model.Password" placeholder="Contraseña" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Primer Nombre(*):</label>
+                                    <input type="text" class="form-control" name="FirstName" id="FirstName" value="@Model.FirstName" placeholder="Nombre" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Segundo Nombre:</label>
+                                    <input type="text" class="form-control" name="SecondName" id="SecondName" value="@Model.SecondName" placeholder="Segundo nombre" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Primer Apellido(*):</label>
+                                    <input type="text" class="form-control" name="FirstLastName" id="FirstLastName" value="@Model.FirstLastName" placeholder="Primer apellido" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="font-weight-bold">Segundo Apellido:</label>
+                                    <input type="text" class="form-control" name="SecondLastName" id="SecondLastName" value="@Model.SecondLastName" placeholder="Segundo apellido" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Email opcional:</label>
+                                    <input type="text" class="form-control" name="Email" id="Email" value="@Model.Email" placeholder="Email" />
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold">Teléfono:</label>
+                                    <input type="text" class="form-control" name="Phone" id="Phone" value="@Model.Phone" placeholder="Teléfono" />
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">Agencia:</label>
+                                <input type="text" class="form-control" name="Company" id="Company" value="@Model.CompanyName" placeholder="Agencia" />
+
+                            </div>
+                        </fieldset>
+                    } else {
+                        <p>No se ha podido mostrar el detalle de usuario</p>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+<!--end page wrapper-->

@@ -1,0 +1,37 @@
+﻿<nav id="sidebar" class="sidebar bg-purple-dark px-md-4" role="navigation">
+    <div class="sidebar-header text-center py-4">
+        <img class="img-fluid rounded-circle border-lg border-purple-light" width="120" src="https://logopond.com/logos/de4305481984e56e5d5878bde95b632a.png" alt="Logo">
+        <h5 class="font-weight-bold pt-3">
+            Administrador
+            Global
+        </h5>
+        <strong class="pt-4">AG</strong>
+        <div class="line"></div>
+    </div>
+    <ul class="list-unstyled bg-purple-light rounded pb-4">
+        <li>
+            <a href="#submenu1" data-toggle="collapse" aria-expanded="false"><i class="fas fa-building"></i><span>Agencias</span> <i class="fas fa-chevron-right"></i></a>
+            <ul class="collapse list-unstyled" id="submenu1">
+                <li><a asp-area="" asp-controller="Agency" asp-action="AddAgency">Agregar</a></li>
+                <li><a asp-area="" asp-controller="Agency" asp-action="EditAgency">Ver Todos</a></li>
+            </ul>
+        </li>
+        <li><a asp-area="" asp-controller="User" asp-action="AllUser"><i class="fas fa-users"></i><span>Usuarios Web</span></a></li>
+        <li>
+            <a href="#submenu2" data-toggle="collapse" aria-expanded="false"><i class="fas fa-map-marked-alt"></i><span>Tours</span>  <i class="fas fa-chevron-right"></i></a>
+            <ul class="collapse list-unstyled" id="submenu2">
+                <li><a href="">Agregar</a></li>
+                <li><a href="">Ver Todos</a></li>
+            </ul>
+        </li>
+        <li>
+            <a data-toggle="collapse" href="#submenu3" aria-expanded="false"><i class="fas fa-city"></i><span>Ciudad</span> <i class="fas fa-chevron-right"></i></a>
+            <ul class="collapse list-unstyled" id="submenu3">
+                <li><a asp-controller="City" asp-action="AddCity">Agregar</a></li>
+                <li><a asp-controller="City" asp-action="All">Ver Todos</a></li>
+            </ul>
+        </li>
+        <li><a asp-area="" asp-controller="UserPortal" asp-action="All"><i class="fas fa-user-edit"></i><span>Usuarios Portal</span></a></li>
+
+    </ul>
+</nav>
